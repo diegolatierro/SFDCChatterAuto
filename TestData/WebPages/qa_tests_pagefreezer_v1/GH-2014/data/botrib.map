@@ -1,0 +1,20 @@
+#$MTIMFH
+#$-:Image Map file created by Map THIS!
+#$-:Map THIS! free image map editor by Todd C. Wilson
+#$-:Please do not edit lines starting with "#$"
+#$VERSION:1.20
+#$DATE:Mon May 13 16:04:16 1996
+#$PATH:G:\INETART\
+#$GIF:BOTRIB.GIF
+#$FORMAT:ncsa
+#$EOH
+default http://www.usatoday.com/usafront.htm
+rect http://www.usatoday.com/usafront.htm 51,0 129,19
+rect http://www.usatoday.com/news/nfront.htm 133,0 173,18
+rect http://www.usatoday.com/sports/sfront.htm 175,0 224,19
+rect http://www.usatoday.com/money/mfront.htm 227,0 270,19
+rect http://www.usatoday.com/life/lfront.htm 272,0 302,19
+rect http://www.usatoday.com/weather/wfront.htm 305,0 359,19
+rect http://www.usatoday.com/feedback/comment1.htm 360,0 423,19
+rect http://167.8.29.8/plweb-cgi/ixacct.pl 425,0 472,19
+rect http://www.usatoday.com/leadpage/indexusa.htm 473,1 509,20

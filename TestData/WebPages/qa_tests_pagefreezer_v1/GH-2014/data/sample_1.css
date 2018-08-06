@@ -1,0 +1,64 @@
+body {
+    font-family: 'Noto Sans', Arial, serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.618em;
+    background: #464646 url("../images/coffee-wallpaper-21.jpg") center center no-repeat fixed;
+    background-size: cover;
+}
+
+h1 {
+    font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif
+}
+
+h2 {
+    font-family: 'Noto Sans', Arial, serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.618em;
+}
+
+section {
+    max-width: 800px;
+    margin: 8% auto 1em auto;
+    background-color: #222;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    /* For IE8 and earlier */
+    color: #fff;
+    padding: 1em 5%;
+}
+
+@media (max-device-width: 1027px) {
+    body {
+        text-align: center;
+        font-size: larger;
+    }
+    section {
+        max-width: 90%;
+    }
+}
+
+@media (max-device-width: 640px) {
+    section {
+        max-width: 97%;
+    }
+}
+
+ul.a {
+    list-style-type: circle;
+}
+
+ul.b {
+    list-style: square url("../images/sqpurple.gif");
+
+}
+
+ol.c {
+    list-style-type: upper-roman;
+}
+
+ol.d {
+    list-style-type: lower-alpha;
+}

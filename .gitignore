@@ -1,0 +1,16 @@
+
+geckodriver.exe
+/target/
+Automation_Scripts/test-output/
+Automation_Scripts/target/
+<<<<<<< HEAD
+=======
+pom.xml
+>>>>>>> ea6fdaf9612029687d21d97ecaab747996d963cf
+*.class
+<<<<<<< HEAD
+*.class
+=======
+>>>>>>> e086196069306834cc472bb65b4edc1a7728dabc
+*.class
+*.html

@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html>
+<frameset cols="33%,*">
+  <frame src="https://www.uspto.gov/patents-application-process/checking-application-status/quick-start-guides" data-original="https://www.uspto.gov/sites/default/files/patents/process/status/private_pair/PrivPairOverview_Oct09.pdf">
+  <frame src="https://catalog.data.gov/dataset/public-patent-application-information-retrieval-pair-extracts-2001-present" data-original="http://patents.reedtech.com/downloads/pair/12102391.zip">
+</frameset>
+</html>
+

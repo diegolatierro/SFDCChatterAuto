@@ -1,0 +1,20 @@
+HTML5 And The W3C
+The newest version of hypertext mark up language is html5. This standard for Internet webpages has been upgraded significantly over previous versions.
+Verfasst von semagix Team am 2010.07.09 um 03:53:00 Uhr
+It has a variety of new features that were only available through browser add ons in the past. Some of them include the ability to play video plus drag and drop functions. This implementation will only add to the user interaction process begun with the advent of Web 2.0
+
+Much of the work on this project has been done by the World Web Consortium (W3C). It is currently in the working draft stage with promotion to the recommendation status by the end of 2010. Although html5 is labeled as a working model, some portions will be completed for use in browsers even before the entire specification is promoted to the final recommendation stage. 
+
+Anything of this magnitude requires much study and contemplation. The W3C expects analysis at the candidate recommendation level during the year 2012 with a full recommendation expected by 2022 at the earliest. But as mentioned previously, several areas have been deemed worthy of being used in browser in late 2010.
+
+The bevy of innovations is indicative of the usage on today's websites. Generic elements such as those for presentation (e.g. <center>) has been eliminated, as they can be effectively managed by CSS (cascading style sheets). The new coding features a much more rich media experience, with the ability to incorporate audio (<audio>) and video (<video>) into the language.
+
+Perhaps the best developmental idea was the incorporation of Web 2.0 forms. As today's users have become more savvy, websites are now designed with an interactive experience in mind. This can be used to elicit opinions, get feedback or view media. It all depends on the content shown.
+
+Along with the more specific markup indications, html5 will also include more application programming interfaces (APIs). These may cover such things as the ability to manage the browser history, document editing and a local SQL database. All of these functions have the effect of allowing software programmers to customize a web page more completely. Interfaces can be constructed without the need for as many third party applications as before.
+
+Other differences between previous versions include new attributes, new elements and new types of form controls. All of these will enable web surfers to more fully interact with these pages. 
+
+Error handling has also been upgraded so older browser versions can ignore incorrect syntax. This flexibility will ensure that a more standard response will be received in the event of improper constructs.
+
+The full, feature-rich design of html5 will create a more satisfying web experience, while also correcting some of the major problems with previous versions.

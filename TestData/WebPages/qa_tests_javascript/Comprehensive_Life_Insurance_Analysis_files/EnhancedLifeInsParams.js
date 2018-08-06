@@ -1,0 +1,131 @@
+
+
+
+
+KJE.parameters.set("AGE_START1",18);
+KJE.parameters.set("AGE_START2",18);
+KJE.parameters.set("AGE_START3",18);
+KJE.parameters.set("AGE_START4",18);
+KJE.parameters.set("AGE_OF_CHILD1",0);
+  KJE.parameters.set("AGE_OF_CHILD2",0);
+  KJE.parameters.set("AGE_OF_CHILD3",0);
+  KJE.parameters.set("AGE_OF_CHILD4",0);
+  KJE.parameters.set("AUTOMOBILES",0);
+  KJE.parameters.set("AUTO_LOANS",0);
+  KJE.parameters.set("BONDS",0);
+  KJE.parameters.set("CHARITABLE_BEQUESTS",0);
+  KJE.parameters.set("CHECKING_AND_SAVINGS",0);
+  KJE.parameters.set("CHILD_ANNUAL_TUITION1",0);
+  KJE.parameters.set("CHILD_ROOM_AND_BOARD1",0);
+  KJE.parameters.set("CHILD_ANNUAL_TUITION2",0);
+  KJE.parameters.set("CHILD_ROOM_AND_BOARD2",0);
+  KJE.parameters.set("CHILD_ANNUAL_TUITION3",0);
+  KJE.parameters.set("CHILD_ROOM_AND_BOARD3",0);
+  KJE.parameters.set("CHILD_ANNUAL_TUITION4",0);
+  KJE.parameters.set("CHILD_ROOM_AND_BOARD4",0);
+  KJE.parameters.set("COLLEGE_COST_INFLATION",KJE.Default.InflationRate);
+  KJE.parameters.set("COTTAGE",0);
+  KJE.parameters.set("CREDIT_CARD_DEBT",0);
+  KJE.parameters.set("DURATION_INVESTMENT_INTEREST_INCOME",0);
+  KJE.parameters.set("DURATION_OTHER_INCOME",0);
+  KJE.parameters.set("DURATION_PENSION_INCOME",0);
+  KJE.parameters.set("DURATION_RENTAL_INCOME",0);
+  KJE.parameters.set("DURATION_SPOUSE_INCOME",0);
+  KJE.parameters.set("DURATION_SURVIVING_SPOUSE_PENSION",0);
+  KJE.parameters.set("FUNERAL_COSTS",0);
+  KJE.parameters.set("HOME",0);
+  KJE.parameters.set("HOME_MORTGAGE_PRINCIPAL",0);
+  KJE.parameters.set("HOUSEHOLD_ITEMS",0);
+  KJE.parameters.set("INFLATION_RATE",KJE.Default.InflationRate);
+  KJE.parameters.set("INTERNATIONAL","US");
+  KJE.parameters.set("INVESTMENT_INTEREST_INCOME",0);
+  KJE.parameters.set("JEWELRY",0);
+  KJE.parameters.set("LIFE_INSURANCE",0);
+/*  KJE.parameters.set("LBL_ANNUAL_TUITION","tuition and books");
+ KJE.parameters.set("LBL_ROOM_AND_BOARD","living expenses");
+ KJE.parameters.set("MSG_ANNUAL_TUITION","Tuition and books");
+  KJE.parameters.set("MSG_CALC_ASSETS","");
+  KJE.parameters.set("MSG_CALC_EDUCATION_SAVINGS","");
+  KJE.parameters.set("MSG_CALC_EXPENSES","");
+  KJE.parameters.set("MSG_CALC_INCOME","");
+  KJE.parameters.set("MSG_CALC_INVESTMENTS","");
+  KJE.parameters.set("MSG_CALC_LIABILITY","");
+  KJE.parameters.set("MSG_CALC_LIVING","");
+  KJE.parameters.set("MSG_CHECKING_LBL","Checking and savings");
+  KJE.parameters.set("MSG_CHILD_FOUR_ANNUAL_TUITION","Child four tuition and books");
+  KJE.parameters.set("MSG_CHILD_FOUR_ROOM_AND_BOARD","Child four living expenses");
+  KJE.parameters.set("MSG_CHILD_ONE_ANNUAL_TUITION","Child one tuition and books");
+  KJE.parameters.set("MSG_CHILD_ONE_ROOM_AND_BOARD","Child one living expenses");
+  KJE.parameters.set("MSG_CHILD_THREE_ANNUAL_TUITION","Child three tuition and books");
+  KJE.parameters.set("MSG_CHILD_THREE_ROOM_AND_BOARD","Child three living expenses");
+  KJE.parameters.set("MSG_CHILD_TWO_ANNUAL_TUITION","Child two tuition and books");
+  KJE.parameters.set("MSG_CHILD_TWO_ROOM_AND_BOARD","Child two living expenses");
+  KJE.parameters.set("MSG_DURATION","Duration (in years)");
+  KJE.parameters.set("MSG_LIFE_INSURANCE","Cash value of life insurance");
+  KJE.parameters.set("MSG_MONTHLY_AMOUNT","Monthly Amount");
+  KJE.parameters.set("MSG_MONTHLY_DURATION","Duration");
+  KJE.parameters.set("MSG_MONTHLY_EXPENSE1","Child care");
+  KJE.parameters.set("MSG_MONTHLY_EXPENSE10","Telephone/cellular");
+  KJE.parameters.set("MSG_MONTHLY_EXPENSE11","Cable");
+  KJE.parameters.set("MSG_MONTHLY_EXPENSE12","Internet");
+  KJE.parameters.set("MSG_MONTHLY_EXPENSE13","Home maintenance");
+  KJE.parameters.set("MSG_MONTHLY_EXPENSE14","Food");
+  KJE.parameters.set("MSG_MONTHLY_EXPENSE15","Auto gas and maintenance");
+  KJE.parameters.set("MSG_MONTHLY_EXPENSE16","Clothing");
+  KJE.parameters.set("MSG_MONTHLY_EXPENSE17","Travel and entertainment");
+  KJE.parameters.set("MSG_MONTHLY_EXPENSE18","Donations");
+  KJE.parameters.set("MSG_MONTHLY_EXPENSE19","Gifts expense");
+  KJE.parameters.set("MSG_MONTHLY_EXPENSE2","Mortgage payments");
+  KJE.parameters.set("MSG_MONTHLY_EXPENSE20","Other expenses");
+  KJE.parameters.set("MSG_MONTHLY_EXPENSE3","Property taxes");
+  KJE.parameters.set("MSG_MONTHLY_EXPENSE4","Rent");
+  KJE.parameters.set("MSG_MONTHLY_EXPENSE5","Car lease payments");
+  KJE.parameters.set("MSG_MONTHLY_EXPENSE6","Auto insurance");
+  KJE.parameters.set("MSG_MONTHLY_EXPENSE7","Property insurance");
+  KJE.parameters.set("MSG_MONTHLY_EXPENSE8","Other insurance");
+  KJE.parameters.set("MSG_MONTHLY_EXPENSE9","Household utilities");
+  KJE.parameters.set("MSG_MONTHLY_START","Start");
+  KJE.parameters.set("MSG_RETIREMENT_ACCOUNT_LBL","Retirement accounts");
+  KJE.parameters.set("MSG_ROOM_AND_BOARD","Living expenses");
+  KJE.parameters.set("MSG_WHEN_TO_START","When to Start*");
+  */
+  KJE.parameters.set("MUTUAL_FUNDS",0);
+  KJE.parameters.set("NUMBER_OF_YEARS_YOU_WISH_INSURANCE_TO_COVER",50);
+  KJE.parameters.set("OTHER_ASSETS",0);
+  KJE.parameters.set("OTHER_ATDEATH_EXPENSES",0);
+  KJE.parameters.set("OTHER_INCOME",0);
+  KJE.parameters.set("OTHER_LOANS",0);
+  KJE.parameters.set("OTHER_MORTGAGE_PRINCIPAL",0);
+  KJE.parameters.set("OTHER_REAL_ESTATE",0);
+  KJE.parameters.set("OTHER_VEHICLES",0);
+  KJE.parameters.set("PENSION_INCOME",0);
+  KJE.parameters.set("PROBATE_COSTS",0);
+  KJE.parameters.set("RATE_EARNED_ON_SAVINGS_AND_INVESTMENTS",KJE.Default.RORSave);
+  KJE.parameters.set("RENTAL_INCOME",0);
+  KJE.parameters.set("RETIREMENT_ACCOUNTS",0);
+  KJE.parameters.set("SAVINGS_BONDS",0);
+  KJE.parameters.set("SPOUSE_INCOME",0);
+  KJE.parameters.set("START_INVESTMENT_INTEREST_INCOME",0);
+  KJE.parameters.set("START_OTHER_INCOME",0);
+  KJE.parameters.set("START_PENSION_INCOME",0);
+  KJE.parameters.set("START_RENTAL_INCOME",0);
+  KJE.parameters.set("START_SPOUSE_INCOME",0);
+  KJE.parameters.set("START_SURVIVING_SPOUSE_PENSION",0);
+  KJE.parameters.set("STOCKS",0);
+  KJE.parameters.set("STUDENT_LOANS",0);
+  KJE.parameters.set("SURVIVING_SPOUSE_PENSION",0);
+  KJE.parameters.set("TAX_LIABILITY",0);
+  KJE.parameters.set("UNINSURED_MEDICAL_COSTS",0);
+  KJE.parameters.set("MSG_SAVINGS_BONDS","Savings bonds");
+  KJE.parameters.set("MSG_RETIREMENT_ACCOUNTS","Retirement accounts");
+KJE.parameters.set("MSG_HOME","Home");
+KJE.parameters.set("MSG_COTTAGE","Second home");
+KJE.parameters.set("MSG_TAX_LIABILITY","Taxes on assets");
+
+
+
+
+/**V3_CUSTOM_CODE**/
+/* <!-- Get a Comprehensive Life Insurance Analysis you can put on your website! Many more colorful, interactive, graphing financial calculators.  Financial Calculators, &copy;1998-2017 KJE Computer Solutions, LLC.  For more information please see:   <a href="http://www.dinkytown.net">http://www.dinkytown.net</A> --> */
+if (KJE.IE7and8) KJE.init();
+

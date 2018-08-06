@@ -1,0 +1,81 @@
+<!-- PARSER_TEST:{"test_element_id":"meta_001", "count":3, "urls":["meta_001.htm", "data/images/Retro-red-tree-and-a-beautiful-wheat-field_1920x1080.jpg", "http://fonts.googleapis.com/css?family=Noto+Sans:400,700"]} -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Testing "meta http-equiv='content-type'" with inline JavaScript - Date() function; </title>
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+    <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
+
+    <style>
+        body{
+            font-family: 'Noto Sans', Arial, serif;
+            font-weight: 400;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            line-height: 1.618em;
+            background: #464646 url('./data/images/Retro-red-tree-and-a-beautiful-wheat-field_1920x1080.jpg') center center no-repeat fixed;
+            background-size: cover;
+        }
+        h2{
+            font-family: 'Noto Sans', Arial, serif;
+            font-weight: 700;
+            font-size:40px;
+            line-height: 1.618em;
+        }
+        section{
+            max-width:800px;
+            margin:8% auto 1em auto;
+            background-color:#222;
+            opacity: 0.8;
+            filter: alpha(opacity=80); /* For IE8 and earlier */
+            color:#fff;
+            padding:1em 5%;
+        }
+        a{
+            color: #00CC66;
+        }
+        a:focus{
+            outline:none;
+            outline-offset:inherit;
+        }
+        @media (max-device-width: 1027px) {
+            body{
+                text-align:center;
+                font-size:larger;
+            }
+            section{
+                max-width: 90%;
+            }
+        }
+        @media (max-device-width: 640px) {
+            section{
+                max-width: 97%;
+            }
+        }
+    </style>
+</head>
+<body>
+  Hello! (English)<br>
+  Hallo! (Dutch)<br>
+  charset="iso-8859-1" is Dutch (nl); source: https://www.w3.org/International/O-charset-lang.html
+  <br>Generate different context here: http://randomtextgenerator.com/ using different Languages.
+  <br>
+  <section>
+    Testing:
+    <br>"&ltmeta http-equiv='content-type' content='text/html; charset=iso-8859-1'&gt" <br> with inline JavaScript - Date() function;<br>
+
+    <h2>Alleen en nu europa en sterke wereld in</h2>
+
+    <p>Lage soms deel stad ad vast nu erin. Zij wie met vermijden nutteloos tinmijnen. Kan wegen wilde drong reden dal naast tin van. Stampers roestige pyrieten ad te. Beroemde eveneens te laatsten contract te. Ten gronds weldra gevolg die passen steeds zonder. Singapore inderdaad zee elk gedeelten ons tin afscheidt plaatsing afstanden. En deze in ze dure mier liet. Al anson af noemt op kreeg omdat china.</p>
+
+    <p>
+      Current Time:<br>
+      <script language="javascript">
+        var today = new Date();
+        document.write(today);
+      </script>
+    </p>
+  </section>
+</body>
+</html>
