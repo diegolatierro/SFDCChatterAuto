@@ -21,45 +21,60 @@ public class SalesforceChatter {
     WebElement chatterActivationButton;  
     
     @FindBy(css="div[data-placeholder='Share an update...']")
-    WebElement ChatterPostField;
+    WebElement chatterPostField;
     
     @FindBy(css="button[title='Click, or press Ctrl+Enter']")
-    WebElement ChatterShareButton;
+    WebElement chatterShareButton;
     
     @FindBy(className="")
-    WebElement ChatterPostButton;
+    WebElement chatterPostButton;
     
     @FindBy(css="a[data-tab-name=\"FeedItem.PollPost\"]")//a[data-tab-name='FeedItem.PollPost']
-    WebElement ChatterPollButton;
+    WebElement chatterPollButton;
     
     @FindBy(css="a[data-tab-name='FeedItem.QuestionPost']")
-    WebElement ChatterQuestionButton;
+    WebElement chatterQuestionButton;
     
     //unable to get the last post like this!
     @FindBy(css="div[class='feedBodyInner Desktop oneApp']>p>span")
-    WebElement LastPost;
+    WebElement lastPost;
     
     @FindBy(css="textarea[placeholder='What would you like to ask?']")
-    WebElement ChatterPollfield;
+    WebElement chatterPollfield;
     
     @FindBy(css="button[class='slds-button slds-button--neutral cuf-publisherShareButton qe-pollPostDesktop MEDIUM uiButton--default uiButton--brand uiButton']")
-    WebElement ChatterPollShareButton;
+    WebElement chatterPollShareButton;
     
     //VERIFY IF CHOICES IS A SELECTOR OR TIMEOUT PROBLEM 
     @FindBy(css="input[class='inputField cuf-pollChoiceField input']:nth-of-type(1)")
-    WebElement ChatterPollChoice1field;
+    WebElement chatterPollChoice1field;
     
-    @FindBy(css="input[class='inputField cuf-pollChoiceField input'][data-interactive-lib-uid='5']")
-    WebElement ChatterPollChoice2field;
+    @FindBy(css="input[class='inputField cuf-pollChoiceField input']:last-of-type")
+    WebElement chatterPollChoice2field;
     
     @FindBy(css="textarea[placeholder='What would you like to know?']")
-    WebElement ChatterQuestionField;
+    WebElement chatterQuestionField;
     
     @FindBy(css="div[data-placeholder='If you have more to say, add details here ...']")
-    WebElement ChatterQuestionDescField;
+    WebElement chatterQuestionDescField;
     
     @FindBy(css="button[title='Click, or press Ctrl+Enter']")
-    WebElement ChatterQuestionAskButton;
+    WebElement chatterQuestionAskButton;
+    
+    @FindBy(css="textarea[placeholder='Write a comment...']:nth-of-type(1)")
+    WebElement chatterActivationCommentForPost;
+    
+    @FindBy(css="textarea[placeholder='Write an answer...']:nth-of-type(1)")
+    WebElement chatterActivationCommentForQuestion;
+    
+    @FindBy(css="div[data-placeholder='Write a comment...']")
+    WebElement chatterCommentField;
+    
+    @FindBy(css="div[data-placeholder='Write an answer...']")
+    WebElement chatterCommentFieldOnQuestion;
+    
+    @FindBy(css="button[class='slds-button slds-button--neutral  cuf-commentSubmit uiButton--default uiButton--brand uiButton']")
+    WebElement chatterCreateCommentButton;
     
     public SalesforceChatter(WebDriver driver){
         this.driver = driver;
@@ -86,28 +101,29 @@ public class SalesforceChatter {
     
     //type automated post on textfield for post
     public void typeOnPostField (String message) {
-    	ChatterPostField.sendKeys(message);
+    	chatterPostField.sendKeys(message);
     }
     
     //click on Share button for post
     public void clickOnPostShareButton(){
-    	ChatterShareButton.click();
+    	chatterShareButton.click();
     }
     
     //click on poll option
     public void clickOnPoll() {
     	this.pause();
-    	ChatterPollButton.click();
+    	chatterPollButton.click();
     }
     
     //click on question option
     public void clickOnQuestion() {
-    	ChatterQuestionButton.click();
+    	this.pause();
+    	chatterQuestionButton.click();
     }
     
     //get last post
     public String getLastPost() {
-    	return LastPost.getText();
+    	return lastPost.getText();
     }
     
     /**
@@ -127,7 +143,8 @@ public class SalesforceChatter {
     
     public boolean verifyTextPresent(String value)
     {
-      return driver.getPageSource().contains(value);
+    	this.pause();
+    	return driver.getPageSource().contains(value);
     }
     
     /**
@@ -147,18 +164,18 @@ public class SalesforceChatter {
     	this.clickOnPollShareButton();
     }
 	private void clickOnPollShareButton() {
-		ChatterPollShareButton.click();
+		chatterPollShareButton.click();
 	}
 	private void typePollChoice2(String choice2) {
 		this.pause();
-		ChatterPollChoice2field.sendKeys(choice2);
+		chatterPollChoice2field.sendKeys(choice2);
 	}
 	private void typePollChoice1(String choice1) {
 		this.pause();
-		ChatterPollChoice1field.sendKeys(choice1);
+		chatterPollChoice1field.sendKeys(choice1);
 	}
 	private void typePollField(String message) {
-		ChatterPollfield.sendKeys(message);
+		chatterPollfield.sendKeys(message);
 	}
 	public void createChatterQuestion(String message, String description) {
 		this.clickOnQuestion();
@@ -167,21 +184,56 @@ public class SalesforceChatter {
     	this.clickOnQuestionAskButton();
 	}
 	private void clickOnQuestionAskButton() {
-		ChatterQuestionAskButton.click();
+		chatterQuestionAskButton.click();
 	}
 	private void typeQuestionDescription(String description) {
-		ChatterQuestionDescField.sendKeys(description);
+		chatterQuestionDescField.sendKeys(description);
 	}
 	private void typeQuestionField(String message) {
-		ChatterQuestionField.sendKeys(message);
+		chatterQuestionField.sendKeys(message);
 	}
 	//NOT WRITE BUT THE ONLY WORKAROUND THAT I FOUND
   	public void pause() {
   		try {
-  			Thread.sleep(5000);
+  			Thread.sleep(6000);
   		} catch (InterruptedException e) {
   			// TODO Auto-generated catch block
   			e.printStackTrace();
   		}
   	}
+
+
+	public void createChatterCommentForPost(String comment) {
+    	this.pause();
+    	this.clickOnPostCommentButtonForPost();
+    	this.typeOnCommentField(comment);
+    	this.clickOnCommentField();
+	}
+	public void createChatterCommentForQuestion(String comment) {
+    	this.pause();
+    	this.clickOnPostCommentButtonForQuestion();
+    	this.typeOnCommentFieldOnQuestion(comment);
+    	this.clickOnCommentField();
+	}
+	
+	private void clickOnPostCommentButtonForPost() {
+		this.pause();
+		chatterActivationCommentForPost.click();
+	}
+	
+	private void clickOnPostCommentButtonForQuestion() {
+		this.pause();
+		chatterActivationCommentForQuestion.click();
+	}
+	private void typeOnCommentField(String comment) {
+		this.chatterCommentField.sendKeys(comment);
+	}
+	
+	private void typeOnCommentFieldOnQuestion(String comment) {
+		this.chatterCommentFieldOnQuestion.sendKeys(comment);
+	}
+	
+	private void clickOnCommentField() {
+		this.chatterCreateCommentButton.click();
+	}
 }

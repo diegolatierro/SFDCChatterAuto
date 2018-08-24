@@ -1,10 +1,7 @@
 package test;
 
-import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import base.BaseClass;
@@ -13,12 +10,22 @@ import pageFactory.Gmail;
 import pageFactory.SalesForceLogin;
 import pageFactory.SalesforceChatter;
 
-public class TestCreatePost extends BaseClass{
+public class TestCreateCommentOnPost extends BaseClass{
 
+    //WebDriver driver;
     SalesForceLogin objLogin;
     SalesforceChatter objChatterPage;
+    //Data objData;
     Gmail objGmail;
 
+   /* @BeforeTest
+    public void setup(){
+        driver = new FirefoxDriver();
+        objData = new Data(driver);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        driver.get(objData.getChatterUrl());
+    }
+*/
     /**
      * precondition: have the rule set up
      * 
@@ -32,6 +39,7 @@ public class TestCreatePost extends BaseClass{
     public void test_Create_Chatter_Post(){    	
     	objGmail = new Gmail(driver);
 	    String message = objData.createARandomText("post");
+	    String comment = objData.createARandomText("comment");
 	    String salesforceUser = objData.getSalesforceUser();
 	    String salesforcePass = objData.getSalesforcePass();
 	    String gmailUrl = objData.getGmailURL();
@@ -48,11 +56,13 @@ public class TestCreatePost extends BaseClass{
 	    objChatterPage.createChatterPost(message);
 	    //verify if text is present
 	    Assert.assertTrue(objChatterPage.verifyTextPresent(message));
+	    //create a comment
+	    objChatterPage.createChatterCommentForPost(comment);
 	    
 	    //verification that the post is no the email
 	    driver.get(gmailUrl);
 		objGmail.loginGmail(gmailEmail, gmailPass);
-		//step 11 Click on connect button from the email
-		Assert.assertEquals(objGmail.clickFirstEmailAndGetMessage(), message);
+		//step 11 verify the comment created
+		Assert.assertEquals(objGmail.clickFirstEmailAndGetComment(), message);
     }
 }

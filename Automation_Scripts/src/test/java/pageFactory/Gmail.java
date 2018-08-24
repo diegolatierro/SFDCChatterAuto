@@ -27,9 +27,24 @@ public class Gmail {
     
     @FindBy(css="table+table>tbody>tr:nth-child(1)>td:nth-child(3)>a:nth-child(1)>span")
     WebElement firstEmail;
+
+    @FindBy(css=".msg > div:nth-child(3) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > p:nth-child(4)")
+    WebElement emailOnPost;//revisar!!!!
+
+    @FindBy(css=".msg > div:nth-child(3) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > p:nth-child(5)")
+    WebElement emailOnComment;
     
-    @FindBy(css=".msg > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > p:nth-child(4)")
-    WebElement messageCaptured;
+    @FindBy(css=".msg > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > p:nth-child(3)")
+    WebElement emailOnPoll;
+    
+    @FindBy(css="table[style='width:100%!important;border-collapse:collapse']>tbody>tr>td>table>tbody>tr>td>p:nth-of-type(2)")
+    WebElement emailOnQuestion;
+    
+    @FindBy(css="table[style='width:100%!important;border-collapse:collapse']>tbody>tr>td>table>tbody>tr>td>p:nth-of-type(3)")
+    WebElement emailOnQuestionDescription;
+    
+    @FindBy(css=".msg > div:nth-child(3) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > p:nth-child(5)")
+    WebElement emailOnQuestionComment;
     
     @FindBy(css=".msg > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > p:nth-child(2)")
     WebElement postCaptured;
@@ -66,11 +81,23 @@ public class Gmail {
     	firstEmail.click();
     }
     
-    public String getCapturedMessage() {
-    	return this.messageCaptured.getText();
+    public String getCapturedPost() {
+    	this.pause();
+    	return this.emailOnPost.getText();
+    }
+    public String getCapturedComment() {
+    	this.pause();
+    	return this.emailOnPost.getText();
+    }
+    public String getCapturedPoll() {
+    	this.pause();
+    	return this.emailOnPoll.getText();
+    }
+    public String getCapturedQuestion() {
+    	this.pause();
+    	return this.emailOnQuestion.getText() + this.emailOnQuestionDescription.getText();
     }
     
-
     /**
      * This POM method will be exposed in test case to login in the application
      * @param strUserName
@@ -93,9 +120,26 @@ public class Gmail {
     	this.pause();
     	this.clickFirstEmail();
     	//System.out.println(getCapturedMessage());
-    	return getCapturedMessage();
+    	return getCapturedPost();
     }
-  //NOT WRITE BUT THE ONLY WORKAROUND THAT I FOUND
+    public String clickFirstEmailAndGetComment() {
+    	this.pause();
+    	this.clickFirstEmail();
+    	//System.out.println(getCapturedMessage());
+    	return getCapturedComment();
+    }
+    public String clickFirstEmailAndGetCommentForQuestion() {
+    	this.pause();
+    	this.clickFirstEmail();
+    	//System.out.println(getCapturedMessage());
+    	return getCapturedCommentForQuestion();
+    }
+  private String getCapturedCommentForQuestion() {
+	  this.pause();
+  	return this.emailOnQuestionComment.getText();
+	}
+
+	//NOT WRITE BUT THE ONLY WORKAROUND THAT I FOUND
   	public void pause() {
   		try {
   			Thread.sleep(5000);
@@ -104,4 +148,18 @@ public class Gmail {
   			e.printStackTrace();
   		}
   	}
+
+	public String clickFirstEmailAndGetPoll() {
+		this.pause();
+    	this.clickFirstEmail();
+    	//System.out.println(getCapturedMessage());
+    	return getCapturedPoll();
+	}
+
+	public String clickFirstEmailAndGetQuestion() {
+		this.pause();
+    	this.clickFirstEmail();
+    	//System.out.println(getCapturedMessage());
+    	return getCapturedQuestion();
+	}
 }

@@ -1,26 +1,19 @@
 package test;
 
-import java.util.concurrent.TimeUnit;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import base.BaseClass;
+import pageFactory.Gmail;
 import pageFactory.SalesForceLogin;
 import pageFactory.SalesforceChatter;
 
-public class TestCreateQuestion {
+public class TestCreateQuestion extends BaseClass{
 
-    WebDriver driver;
     SalesForceLogin objLogin;
     SalesforceChatter objChatterPage;
-
-    @BeforeTest
-    public void setup(){
-        driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        driver.get("https://na72.lightning.force.com/lightning/page/chatter");
-    }
+    Gmail objGmail;
 
     /**
      * This test go to http://login.salesforce.com
@@ -31,16 +24,30 @@ public class TestCreateQuestion {
 
     @Test(priority=0)
     public void test_Create_Chatter_Post(){
-    String message = "automated question message from DiegoBot4";
-    String description = "description for automated question";
-    //Create Login Page object
-    objLogin = new SalesForceLogin(driver);
-    //login to application
-    objLogin.loginToSalesforce("diegolatierro@pf.com", "latierro050985");
-    objChatterPage = new SalesforceChatter(driver);
-    //create a chatter post
-    objChatterPage.createChatterQuestion(message, description);
-    //verify if text is present
-    Assert.assertTrue(objChatterPage.verifyTextPresent(message));
+    	objGmail = new Gmail(driver);
+	    String message = objData.createARandomText("question");
+	    String description = objData.createARandomText("description");
+	    String salesforceUser = objData.getSalesforceUser();
+	    String salesforcePass = objData.getSalesforcePass();
+	    String gmailUrl = objData.getGmailURL();
+    	String gmailEmail = objData.getGmailUserField();
+    	String gmailPass = objData.getGmailPassField();	
+    	
+	    //Create Login Page object
+	    objLogin = new SalesForceLogin(driver);
+	    //login to application
+	    objLogin.loginToSalesforce(salesforceUser,salesforcePass);
+	    objChatterPage = new SalesforceChatter(driver);
+	    //create a chatter post
+	    objChatterPage.createChatterQuestion(message, description);
+	    //verify if text is present
+	    Assert.assertTrue(objChatterPage.verifyTextPresent(message));
+	    
+	    //verification on the email
+	    driver.get(gmailUrl);
+		objGmail.loginGmail(gmailEmail, gmailPass);
+		//System.out.println(objGmail.clickFirstEmailAndGetQuestion());
+		//System.out.println(message+description);
+		Assert.assertEquals(objGmail.clickFirstEmailAndGetQuestion(),(message+description));
     }
 }

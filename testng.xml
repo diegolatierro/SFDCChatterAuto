@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="demoTests.TestCreatePoll"/>
+      <class name="test.TestCreateFacebookPost"/>
+      <class name="test.twitter.TestCreateArchiveValidateInvalidEmailError"/>
+      <class name="test.twitter.TestPublicURL"/>
+      <class name="test.twitter.TestCreateArchiveValidateInvalidUrlError"/>
+      <class name="test.TestCreateTweet"/>
+      <class name="test.twitter.TestCreateAnArchiveNotCapture"/>
+      <class name="demoTests.TestCreateQuestion"/>
+      <class name="test.twitter.TestCaptureReply"/>
+      <class name="test.twitter.TestCreateArchiveValidateNoEmailError"/>
+      <class name="test.twitter.TestCaptureTweet"/>
+      <class name="test.twitter.TestCreateAnArchiveThatExists"/>
+      <class name="test.twitter.TestCreateArchiveValidateNoUrlError"/>
+      <class name="test.TestCreateLinkedInPost"/>
+      <class name="test.twitter.TestCreateAnArchiveCapture"/>
+      <class name="test.TestWrongLogin"/>
+      <class name="test.TestCreateAnAlert"/>
+      <class name="test.twitter.TestCreateAnArchiveDelete"/>
+      <class name="demoTests.TestCreatePost"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

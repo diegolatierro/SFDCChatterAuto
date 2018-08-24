@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.TestCreatePoll">
+      <class name="test.TestCreateCommentOnQuestion">
         <methods>
           <include name="test_Create_Chatter_Post"/>
           <include name="setup"/>
+          <include name="exit"/>
         </methods>
-      </class> <!-- test.TestCreatePoll -->
+      </class> <!-- test.TestCreateCommentOnQuestion -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
