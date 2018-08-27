@@ -76,6 +76,21 @@ public class SalesforceChatter {
     @FindBy(css="button[class='slds-button slds-button--neutral  cuf-commentSubmit uiButton--default uiButton--brand uiButton']")
     WebElement chatterCreateCommentButton;
     
+    @FindBy(css="button.slds-button--neutral:nth-child(2)")
+    WebElement postEditSave;
+    
+    @FindBy(css=".slds-has-focus > div:nth-child(1) > div:nth-of-type(1)")
+    WebElement postEditField;
+    
+    @FindBy(css="textarea[class='cuf-questionTitleField textarea'][data-interactive-lib-uid='4']")
+    WebElement questionEditField;
+    
+    @FindBy(css="li.cuf-actionItem:nth-child(2) > a:nth-child(1)")
+    WebElement postEditOption;
+    
+    @FindBy(css="div[class=\"cuf-media-right forceChatterOverflowActionMenu uiMenu\"]>a:nth-child(1)")
+    WebElement postPicklist;
+        
     public SalesforceChatter(WebDriver driver){
         this.driver = driver;
         //This initElements method will create all WebElements
@@ -235,5 +250,53 @@ public class SalesforceChatter {
 	
 	private void clickOnCommentField() {
 		this.chatterCreateCommentButton.click();
+	}
+
+	public void editPost(String newMessage) {
+		// click on picklist
+		this.clickOnPostOptions();
+		//click on edit
+		this.clickOnPostEdit();
+		//type newMessage
+		this.typeNewMessage(newMessage);
+		//click on save
+		this.clickOnPostEditSave();
+	}
+	public void editQuestion(String newMessage, String newDescription) {
+		// click on picklist
+		this.clickOnPostOptions();
+		//click on edit
+		this.clickOnPostEdit();
+		//type newMessage
+		this.typeNewMessageQuestion(newMessage);
+		this.typeNewMessage(newDescription);
+		//click on save
+		this.clickOnPostEditSave();
+	}
+
+
+	private void clickOnPostEditSave() {
+		this.pause();
+		this.postEditSave.click();
+		
+	}
+
+	private void typeNewMessage(String newMessage) {
+		this.pause();
+		this.postEditField.sendKeys(newMessage);
+	}
+	private void typeNewMessageQuestion(String newMessage) {
+		this.pause();
+		this.questionEditField.sendKeys(newMessage);
+	}
+
+	private void clickOnPostEdit() {
+		this.pause();
+		this.postEditOption.click();
+	}
+
+	private void clickOnPostOptions() {
+		this.pause();
+		this.postPicklist.click();
 	}
 }
