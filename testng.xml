@@ -3,25 +3,17 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="demoTests.TestCreatePoll"/>
-      <class name="test.TestCreateFacebookPost"/>
-      <class name="test.twitter.TestCreateArchiveValidateInvalidEmailError"/>
-      <class name="test.twitter.TestPublicURL"/>
-      <class name="test.twitter.TestCreateArchiveValidateInvalidUrlError"/>
-      <class name="test.TestCreateTweet"/>
-      <class name="test.twitter.TestCreateAnArchiveNotCapture"/>
-      <class name="demoTests.TestCreateQuestion"/>
-      <class name="test.twitter.TestCaptureReply"/>
-      <class name="test.twitter.TestCreateArchiveValidateNoEmailError"/>
-      <class name="test.twitter.TestCaptureTweet"/>
-      <class name="test.twitter.TestCreateAnArchiveThatExists"/>
-      <class name="test.twitter.TestCreateArchiveValidateNoUrlError"/>
-      <class name="test.TestCreateLinkedInPost"/>
-      <class name="test.twitter.TestCreateAnArchiveCapture"/>
-      <class name="test.TestWrongLogin"/>
-      <class name="test.TestCreateAnAlert"/>
-      <class name="test.twitter.TestCreateAnArchiveDelete"/>
-      <class name="demoTests.TestCreatePost"/>
+      <class name="test.TestCreatePoll"/>
+      <class name="test.TestCreatePost"/>
+      <class name="test.TestCreateQuestion"/>
+      <class name="test.TestDeletePoll"/>
+      <class name="test.TestDeletePost"/>
+      <class name="test.TestDeleteQuestion"/>
+      <class name="test.TestEditPost"/>
+      <class name="test.TestEditQuestion"/>
+      <class name="test.TestCreateCommentOnPoll"/>
+      <class name="test.TestCreateCommentOnPost"/>
+      <class name="test.TestCreateCommentOnQuestion"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

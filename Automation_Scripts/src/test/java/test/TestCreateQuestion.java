@@ -46,8 +46,8 @@ public class TestCreateQuestion extends BaseClass{
 	    //verification on the email
 	    driver.get(gmailUrl);
 		objGmail.loginGmail(gmailEmail, gmailPass);
-		//System.out.println(objGmail.clickFirstEmailAndGetQuestion());
-		//System.out.println(message+description);
-		Assert.assertEquals(objGmail.clickFirstEmailAndGetQuestion(),(message+description));
+		objGmail.clickFirstEmail();
+		Assert.assertTrue(isTextPresent(message));
+		Assert.assertTrue(isTextPresent(description));
     }
 }

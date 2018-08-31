@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="test.TestCreatePost">
+        <methods>
+          <include name="test_Create_Chatter_Post"/>
+          <include name="setup"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestCreatePost -->
+      <class name="test.TestCreateQuestion">
+        <methods>
+          <include name="test_Create_Chatter_Post"/>
+          <include name="setup"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestCreateQuestion -->
+      <class name="test.TestDeletePoll">
+        <methods>
+          <include name="test_Create_Chatter_Post"/>
+          <include name="setup"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestDeletePoll -->
+      <class name="test.TestEditQuestion">
+        <methods>
+          <include name="test_Create_Chatter_Post"/>
+          <include name="setup"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestEditQuestion -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

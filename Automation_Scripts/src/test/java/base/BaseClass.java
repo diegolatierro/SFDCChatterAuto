@@ -27,7 +27,15 @@ public class BaseClass {
 	
     @AfterClass
 	public void exit () {
-	//	driver.close();
+		//driver.close();
 	}
-
+    protected boolean isTextPresent(String text){
+        try{
+            boolean b = driver.getPageSource().contains(text);
+            return b;
+        }
+        catch(Exception e){
+            return false;
+        }
+      }
 }

@@ -52,6 +52,8 @@ public class TestCreateCommentOnQuestion extends BaseClass{
 	    driver.get(gmailUrl);
 		objGmail.loginGmail(gmailEmail, gmailPass);
 		//step 11 verify the comment created
-		Assert.assertEquals(objGmail.clickFirstEmailAndGetCommentForQuestion(), comment);
+
+		objGmail.clickFirstEmail();
+		Assert.assertTrue(isTextPresent(comment));
     }
 }

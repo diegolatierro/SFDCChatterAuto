@@ -49,7 +49,7 @@ public class SalesforceChatter {
     @FindBy(css="input[class='inputField cuf-pollChoiceField input']:nth-of-type(1)")
     WebElement chatterPollChoice1field;
     
-    @FindBy(css="input[class='inputField cuf-pollChoiceField input']:last-of-type")
+    @FindBy(css="li[class='choice']+li>div>div>input[class='inputField cuf-pollChoiceField input")
     WebElement chatterPollChoice2field;
     
     @FindBy(css="textarea[placeholder='What would you like to know?']")
@@ -82,15 +82,30 @@ public class SalesforceChatter {
     @FindBy(css=".slds-has-focus > div:nth-child(1) > div:nth-of-type(1)")
     WebElement postEditField;
     
-    @FindBy(css="textarea[class='cuf-questionTitleField textarea'][data-interactive-lib-uid='4']")
+    @FindBy(css="div[class='main ']>div>div>div>textarea")
     WebElement questionEditField;
+    
+    @FindBy(css="div[data-placeholder='Update your post...']")
+    WebElement questionEditDescField;
     
     @FindBy(css="li.cuf-actionItem:nth-child(2) > a:nth-child(1)")
     WebElement postEditOption;
     
     @FindBy(css="div[class=\"cuf-media-right forceChatterOverflowActionMenu uiMenu\"]>a:nth-child(1)")
     WebElement postPicklist;
+    
+    @FindBy(css="a[title='Delete']")
+    WebElement postDeleteOption;
         
+    @FindBy(css="button[title='Delete']")
+    WebElement postDeleteButton;
+    
+    @FindBy(css="button[class='slds-button slds-button_icon-bare']:nth-child(1)")
+    WebElement commentPicklist;
+    
+    @FindBy(css="div[class='slds-dropdown-trigger slds-dropdown-trigger_click cuf-commentActionButton']>button[style='']+div>ul>li[title='Edit']>a")
+    WebElement commentEditButton;
+    
     public SalesforceChatter(WebDriver driver){
         this.driver = driver;
         //This initElements method will create all WebElements
@@ -112,6 +127,16 @@ public class SalesforceChatter {
     public void clickOnPostField() {
     	this.pause();
     	chatterActivationButton.click();
+    }
+    
+    public void clickOnDeleteOption() {
+    	this.pause();
+    	postDeleteOption.click();
+    }
+    
+    public void clickOnDeleteButton() {
+    	this.pause();
+    	postDeleteButton.click();
     }
     
     //type automated post on textfield for post
@@ -230,6 +255,13 @@ public class SalesforceChatter {
     	this.typeOnCommentFieldOnQuestion(comment);
     	this.clickOnCommentField();
 	}
+	public void createChatterCommentForPoll(String comment) {
+    	this.pause();
+    	// CREATE
+    	this.clickOnCommentFieldForPoll();
+    	this.typeOnCommentFieldForPoll(comment);
+    	this.clickOnPostCommentButtonForPoll();
+	}
 	
 	private void clickOnPostCommentButtonForPost() {
 		this.pause();
@@ -251,7 +283,19 @@ public class SalesforceChatter {
 	private void clickOnCommentField() {
 		this.chatterCreateCommentButton.click();
 	}
+	
+	private void clickOnCommentFieldForPoll() {
+		this.pause();
+		chatterActivationCommentForPost.click();
+	}
+	private void clickOnPostCommentButtonForPoll() {
+		this.chatterCreateCommentButton.click();
+	}
 
+	private void typeOnCommentFieldForPoll(String comment) {
+		this.chatterCommentField.sendKeys(comment);
+	}
+	
 	public void editPost(String newMessage) {
 		// click on picklist
 		this.clickOnPostOptions();
@@ -269,7 +313,7 @@ public class SalesforceChatter {
 		this.clickOnPostEdit();
 		//type newMessage
 		this.typeNewMessageQuestion(newMessage);
-		this.typeNewMessage(newDescription);
+		this.typeNewMessageQuestionDescription(newDescription);
 		//click on save
 		this.clickOnPostEditSave();
 	}
@@ -289,6 +333,11 @@ public class SalesforceChatter {
 		this.pause();
 		this.questionEditField.sendKeys(newMessage);
 	}
+	
+	private void typeNewMessageQuestionDescription(String newDescription) {
+		this.pause();
+		this.questionEditDescField.sendKeys(newDescription);
+	}
 
 	private void clickOnPostEdit() {
 		this.pause();
@@ -298,5 +347,35 @@ public class SalesforceChatter {
 	private void clickOnPostOptions() {
 		this.pause();
 		this.postPicklist.click();
+	}
+
+	public void clickOnCommentPicklist() {
+		this.pause();
+		this.commentPicklist.click();
+	}
+	
+	public void clickOnEditCommentOption() {
+		this.pause();
+		this.commentEditButton.click();
+	}
+	
+	public void deletePost() {
+		// click on picklist
+		this.clickOnPostOptions();
+		//click on delete option
+		this.clickOnDeleteOption();
+		//confirm the detele
+		this.clickOnDeleteButton();
+		
+	}
+
+
+	public void editChatterCommentForPost(String newComment) {
+		// click on comment piclikst
+		this.clickOnCommentPicklist();
+		// click on edit option
+		this.clickOnEditCommentOption();
+		// type the new comment
+		// click on save
 	}
 }

@@ -1,14 +1,9 @@
 package test;
 
-import java.util.concurrent.TimeUnit;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import base.BaseClass;
-import pageFactory.Data;
 import pageFactory.Gmail;
 import pageFactory.SalesForceLogin;
 import pageFactory.SalesforceChatter;
@@ -53,6 +48,7 @@ public class TestCreatePost extends BaseClass{
 	    driver.get(gmailUrl);
 		objGmail.loginGmail(gmailEmail, gmailPass);
 		//step 11 Click on connect button from the email
-		Assert.assertEquals(objGmail.clickFirstEmailAndGetMessage(), message);
+		objGmail.clickFirstEmail();
+		Assert.assertTrue(isTextPresent(message));
     }
 }

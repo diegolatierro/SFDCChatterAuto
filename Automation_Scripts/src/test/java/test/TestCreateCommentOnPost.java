@@ -1,31 +1,20 @@
 package test;
 
-import org.openqa.selenium.WebDriver;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.BaseClass;
-import pageFactory.Data;
 import pageFactory.Gmail;
 import pageFactory.SalesForceLogin;
 import pageFactory.SalesforceChatter;
 
 public class TestCreateCommentOnPost extends BaseClass{
 
-    //WebDriver driver;
     SalesForceLogin objLogin;
     SalesforceChatter objChatterPage;
-    //Data objData;
     Gmail objGmail;
 
-   /* @BeforeTest
-    public void setup(){
-        driver = new FirefoxDriver();
-        objData = new Data(driver);
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        driver.get(objData.getChatterUrl());
-    }
-*/
     /**
      * precondition: have the rule set up
      * 
@@ -63,6 +52,8 @@ public class TestCreateCommentOnPost extends BaseClass{
 	    driver.get(gmailUrl);
 		objGmail.loginGmail(gmailEmail, gmailPass);
 		//step 11 verify the comment created
-		Assert.assertEquals(objGmail.clickFirstEmailAndGetComment(), message);
+
+		objGmail.clickFirstEmail();
+		Assert.assertTrue(isTextPresent(comment));
     }
 }

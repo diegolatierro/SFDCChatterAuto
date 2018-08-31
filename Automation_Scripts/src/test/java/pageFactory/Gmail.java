@@ -48,6 +48,9 @@ public class Gmail {
     
     @FindBy(css=".msg > div:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(1) > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > p:nth-child(2)")
     WebElement postCaptured;
+    			 
+    @FindBy(css=".msg > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > table:nth-child(3) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(1) > p:nth-child(3) > span:nth-child(1)")
+    WebElement deleteCaptured;
         
     public Gmail(WebDriver driver){
         this.driver = driver;
@@ -85,6 +88,7 @@ public class Gmail {
     	this.pause();
     	return this.emailOnPost.getText();
     }
+
     public String getCapturedComment() {
     	this.pause();
     	return this.emailOnPost.getText();
@@ -96,6 +100,11 @@ public class Gmail {
     public String getCapturedQuestion() {
     	this.pause();
     	return this.emailOnQuestion.getText() + this.emailOnQuestionDescription.getText();
+    }
+    
+    public String getCapturedDeletedPost() {
+    	this.pause();
+    	return this.deleteCaptured.getText();
     }
     
     /**
@@ -134,7 +143,13 @@ public class Gmail {
     	//System.out.println(getCapturedMessage());
     	return getCapturedCommentForQuestion();
     }
-  private String getCapturedCommentForQuestion() {
+    public String clickFirstEmailAndGetDeletedMessage() {
+    	this.pause();
+    	this.clickFirstEmail();
+    	//System.out.println(getCapturedMessage());
+    	return getCapturedDeletedPost();
+    }
+    private String getCapturedCommentForQuestion() {
 	  this.pause();
   	return this.emailOnQuestionComment.getText();
 	}

@@ -1,6 +1,5 @@
 package test;
 
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -9,7 +8,7 @@ import pageFactory.Gmail;
 import pageFactory.SalesForceLogin;
 import pageFactory.SalesforceChatter;
 
-public class TestEditQuestion extends BaseClass{
+public class TestDeletePoll extends BaseClass{
 
     SalesForceLogin objLogin;
     SalesforceChatter objChatterPage;
@@ -27,15 +26,15 @@ public class TestEditQuestion extends BaseClass{
     @Test(priority=0)
     public void test_Create_Chatter_Post(){    	
     	objGmail = new Gmail(driver);
-	    String message = objData.createARandomText("question");
-	    String description = objData.createARandomText("description");
-	    String newMessage = objData.createARandomText("edit question");
-	    String newDescription = objData.createARandomText("edit description");
+	    String message = objData.createARandomText("poll");
+	    String choice1 = objData.createARandomText("choice 1");
+	    String choice2 = objData.createARandomText("choice 2");
 	    String salesforceUser = objData.getSalesforceUser();
 	    String salesforcePass = objData.getSalesforcePass();
 	    String gmailUrl = objData.getGmailURL();
     	String gmailEmail = objData.getGmailUserField();
     	String gmailPass = objData.getGmailPassField();
+	    
 	    
 	    //Create Login Page object
 	    objLogin = new SalesForceLogin(driver);
@@ -43,19 +42,20 @@ public class TestEditQuestion extends BaseClass{
 	    objLogin.loginToSalesforce(salesforceUser,salesforcePass);
 	    objChatterPage = new SalesforceChatter(driver);
 	    //create a chatter post
-	    objChatterPage.createChatterQuestion(message, description);
+	    objChatterPage.createChatterPoll(message, choice1, choice2);
 	    //verify if text is present
 	    Assert.assertTrue(objChatterPage.verifyTextPresent(message));
-	    //edit post
-	    objChatterPage.editQuestion(newMessage, newDescription);
+	    //delete post
+	    objChatterPage.deletePost();
+	    
 	    
 	    //verification that the post is no the email
-	    /*driver.get(gmailUrl);
+	    driver.get(gmailUrl);
 		objGmail.loginGmail(gmailEmail, gmailPass);
 		//step 11 Click on connect button from the email
-
 		objGmail.clickFirstEmail();
-		Assert.assertTrue(isTextPresent(message+newMessage));
-		Assert.assertTrue(isTextPresent(newDescription+description));*/
+		Assert.assertTrue(isTextPresent(message));
+		Assert.assertTrue(isTextPresent(choice1));
+		Assert.assertTrue(isTextPresent(choice2));
     }
 }

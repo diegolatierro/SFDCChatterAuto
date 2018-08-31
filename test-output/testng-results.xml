@@ -2,56 +2,27 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="99503" started-at="2018-08-26T13:22:24Z" finished-at="2018-08-26T13:24:04Z">
+  <suite name="Default suite" duration-ms="64178" started-at="2018-08-31T15:01:17Z" finished-at="2018-08-31T15:02:21Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="99503" started-at="2018-08-26T13:22:24Z" finished-at="2018-08-26T13:24:04Z">
-      <class name="test.TestEditQuestion">
-        <test-method status="PASS" signature="setup()[pri:0, instance:test.TestEditQuestion@26653222]" name="setup" is-config="true" duration-ms="12998" started-at="2018-08-26T13:22:24Z" finished-at="2018-08-26T13:22:37Z">
+    <test name="Default test" duration-ms="64178" started-at="2018-08-31T15:01:17Z" finished-at="2018-08-31T15:02:21Z">
+      <class name="test.TestCreatePost">
+        <test-method status="PASS" signature="setup()[pri:0, instance:test.TestCreatePost@26653222]" name="setup" is-config="true" duration-ms="18698" started-at="2018-08-31T15:01:17Z" finished-at="2018-08-31T15:01:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="test_Create_Chatter_Post()[pri:0, instance:test.TestEditQuestion@26653222]" name="test_Create_Chatter_Post" duration-ms="86470" started-at="2018-08-26T13:22:37Z" finished-at="2018-08-26T13:24:04Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method status="FAIL" signature="test_Create_Chatter_Post()[pri:0, instance:test.TestCreatePost@26653222]" name="test_Create_Chatter_Post" duration-ms="45446" started-at="2018-08-31T15:01:36Z" finished-at="2018-08-31T15:02:21Z">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Unable to locate element: .slds-has-focus > div:nth-child(1) > div:nth-of-type(1)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DIEGO', ip: '192.168.0.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 9076, moz:profile: C:\Users\Cone\AppData\Local..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: c141d17c-cfd9-4770-845c-00009dbc7fa9
-*** Element info: {Using=css selector, value=.slds-has-focus > div:nth-child(1) > div:nth-of-type(1)}]]>
+              <![CDATA[expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: .slds-has-focus > div:nth-child(1) > div:nth-of-type(1)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:24:21.231Z'
-System info: host: 'DIEGO', ip: '192.168.0.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_171'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 61.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:headless: false, moz:processID: 9076, moz:profile: C:\Users\Cone\AppData\Local..., moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: XP, platformName: XP, platformVersion: 10.0, rotatable: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: c141d17c-cfd9-4770-845c-00009dbc7fa9
-*** Element info: {Using=css selector, value=.slds-has-focus > div:nth-child(1) > div:nth-of-type(1)}
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:548)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:322)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:416)
-at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:314)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy9.sendKeys(Unknown Source)
-at pageFactory.SalesforceChatter.typeNewMessage(SalesforceChatter.java:286)
-at pageFactory.SalesforceChatter.editQuestion(SalesforceChatter.java:272)
-at test.TestEditQuestion.test_Create_Chatter_Post(TestEditQuestion.java:55)
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertTrue(Assert.java:44)
+at org.testng.Assert.assertTrue(Assert.java:54)
+at test.TestCreatePost.test_Create_Chatter_Post(TestCreatePost.java:52)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -79,15 +50,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_Create_Chatter_Post -->
-        <test-method status="PASS" signature="exit()[pri:0, instance:test.TestEditQuestion@26653222]" name="exit" is-config="true" duration-ms="1" started-at="2018-08-26T13:24:04Z" finished-at="2018-08-26T13:24:04Z">
+        <test-method status="PASS" signature="exit()[pri:0, instance:test.TestCreatePost@26653222]" name="exit" is-config="true" duration-ms="0" started-at="2018-08-31T15:02:21Z" finished-at="2018-08-31T15:02:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- exit -->
-      </class> <!-- test.TestEditQuestion -->
+      </class> <!-- test.TestCreatePost -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
