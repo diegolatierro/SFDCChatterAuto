@@ -4,10 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import base.BaseClass;
 //import org.openqa.selenium.support.ui.ExpectedConditions;
 //import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class SalesforceChatter {
+public class SalesforceChatter extends  BaseClass{
 
     /**
      * All WebElements are identified by @FindBy annotation
@@ -101,10 +103,24 @@ public class SalesforceChatter {
     WebElement postDeleteButton;
     
     @FindBy(css="button[class='slds-button slds-button_icon-bare']:nth-child(1)")
-    WebElement commentPicklist;
+	public static
+    WebElement postCommentPicklist;
     
-    @FindBy(css="div[class='slds-dropdown-trigger slds-dropdown-trigger_click cuf-commentActionButton']>button[style='']+div>ul>li[title='Edit']>a")
-    WebElement commentEditButton;
+    @FindBy(css="button[class='slds-button slds-button_icon-bare']:nth-child(1)+div>ul>li[title='Edit']>a")
+	public static
+    WebElement postCommentEditButton;
+    
+    @FindBy(css="button[class='slds-button slds-button_icon-bare']:nth-child(1)+div>ul>li[title='Delete']>a")
+	public static
+    WebElement postCommentDeleteButton;
+    
+    @FindBy(css="button[class='slds-button slds-button_icon-bare']:nth-child(1)")
+	public static
+    WebElement pollCommentPicklist;
+    
+    @FindBy(css="button[class='slds-button slds-button_icon-bare']:nth-child(1)+div>ul>li[title='Edit']>a")
+	public static
+    WebElement pollCommentEditButton;
     
     public SalesforceChatter(WebDriver driver){
         this.driver = driver;
@@ -237,7 +253,6 @@ public class SalesforceChatter {
   		try {
   			Thread.sleep(6000);
   		} catch (InterruptedException e) {
-  			// TODO Auto-generated catch block
   			e.printStackTrace();
   		}
   	}
@@ -248,6 +263,7 @@ public class SalesforceChatter {
     	this.clickOnPostCommentButtonForPost();
     	this.typeOnCommentField(comment);
     	this.clickOnCommentField();
+    	this.pause();
 	}
 	public void createChatterCommentForQuestion(String comment) {
     	this.pause();
@@ -351,12 +367,12 @@ public class SalesforceChatter {
 
 	public void clickOnCommentPicklist() {
 		this.pause();
-		this.commentPicklist.click();
+		this.postCommentPicklist.click();
 	}
 	
 	public void clickOnEditCommentOption() {
 		this.pause();
-		this.commentEditButton.click();
+		this.postCommentEditButton.click();
 	}
 	
 	public void deletePost() {
@@ -372,10 +388,13 @@ public class SalesforceChatter {
 
 	public void editChatterCommentForPost(String newComment) {
 		// click on comment piclikst
-		this.clickOnCommentPicklist();
+		//this.clickOnCommentPicklist();
+		this.pause();
 		// click on edit option
-		this.clickOnEditCommentOption();
+		//this.clickOnEditCommentOption();
 		// type the new comment
+		this.typeNewMessage(newComment);
 		// click on save
+		clickOnPostEditSave();
 	}
 }

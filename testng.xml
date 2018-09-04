@@ -14,6 +14,12 @@
       <class name="test.TestCreateCommentOnPoll"/>
       <class name="test.TestCreateCommentOnPost"/>
       <class name="test.TestCreateCommentOnQuestion"/>
+      <class name="test.TestEditCommentOnPoll"/>
+      <class name="test.TestEditCommentOnPost"/>
+      <class name="test.TestEditCommentOnQuestion"/>
+      <class name="test.TestDeleteCommentOnPoll"/>
+      <class name="test.TestDeleteCommentOnPost"/>
+      <class name="test.TestDeleteCommentOnQuestion"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -26,7 +26,7 @@ public class TestEditCommentOnPost extends BaseClass{
      * verify that the post got to the email		
      */
 
-    @Test(enabled = false)
+    @Test
     public void test_Create_Chatter_Post(){    	
     	objGmail = new Gmail(driver);
 	    String message = objData.createARandomText("post");
@@ -53,13 +53,19 @@ public class TestEditCommentOnPost extends BaseClass{
 	    //edit a comment
 	    
 	    //UNABLE TO CLICK EDIT ON COMMENT (EDIT AND DELETE COMMENTS WILL BE SUSPENDED)
+	    //objChatterPage.editChatterCommentForPost(newComment);
+	    
+	    js.executeScript("arguments[0].click();", SalesforceChatter.postCommentPicklist);
+	    objChatterPage.pause();
+	    js.executeScript("arguments[0].click();", SalesforceChatter.postCommentEditButton);
 	    objChatterPage.editChatterCommentForPost(newComment);
-	    /*
+	    
 	     
 	    //verification that the post is no the email
 	    driver.get(gmailUrl);
 		objGmail.loginGmail(gmailEmail, gmailPass);
 		//step 11 verify the comment created
-		Assert.assertEquals(objGmail.clickFirstEmailAndGetComment(), message);*/
+		objGmail.clickFirstEmail();
+		Assert.assertTrue(isTextPresent(newComment+comment));
     }
 }

@@ -9,10 +9,12 @@ import pageFactory.Gmail;
 import pageFactory.SalesForceLogin;
 import pageFactory.SalesforceChatter;
 
-public class TestEditQuestion extends BaseClass{
+public class TestEditCommentOnPoll extends BaseClass{
 
+    //WebDriver driver;
     SalesForceLogin objLogin;
     SalesforceChatter objChatterPage;
+    //Data objData;
     Gmail objGmail;
 
     /**
@@ -24,18 +26,20 @@ public class TestEditQuestion extends BaseClass{
      * verify that the post got to the email		
      */
 
-    @Test(priority=0)
+    @Test
     public void test_Create_Chatter_Post(){    	
     	objGmail = new Gmail(driver);
-	    String message = objData.createARandomText("question");
-	    String description = objData.createARandomText("description");
-	    String newMessage = objData.createARandomText("edit question");
-	    String newDescription = objData.createARandomText("edit description");
+	    String message = objData.createARandomText("poll");
+	    String choice1 = objData.createARandomText("choice 1");
+	    String choice2 = objData.createARandomText("choice 2");
+	    String comment = objData.createARandomText("comment");
+	    String newComment = objData.createARandomText("edit comment");
 	    String salesforceUser = objData.getSalesforceUser();
 	    String salesforcePass = objData.getSalesforcePass();
 	    String gmailUrl = objData.getGmailURL();
     	String gmailEmail = objData.getGmailUserField();
     	String gmailPass = objData.getGmailPassField();
+	    
 	    
 	    //Create Login Page object
 	    objLogin = new SalesForceLogin(driver);
@@ -43,19 +47,24 @@ public class TestEditQuestion extends BaseClass{
 	    objLogin.loginToSalesforce(salesforceUser,salesforcePass);
 	    objChatterPage = new SalesforceChatter(driver);
 	    //create a chatter post
-	    objChatterPage.createChatterQuestion(message, description);
+	    objChatterPage.createChatterPoll(message, choice1, choice2);
 	    //verify if text is present
 	    Assert.assertTrue(objChatterPage.verifyTextPresent(message));
-	    //edit post
-	    objChatterPage.editQuestion(newMessage, newDescription);
+	    //create a comment
+	    objChatterPage.createChatterCommentForPoll(comment);
+	    //edit a comment
+	    objChatterPage.pause();
+	    js.executeScript("arguments[0].click();", SalesforceChatter.postCommentPicklist);
+	    objChatterPage.pause();
+	    js.executeScript("arguments[0].click();", SalesforceChatter.postCommentEditButton);
+	    objChatterPage.editChatterCommentForPost(newComment);
+	    
 	    
 	    //verification that the post is no the email
 	    driver.get(gmailUrl);
 		objGmail.loginGmail(gmailEmail, gmailPass);
-		//step 11 Click on connect button from the email
-
+		//step 11 verify the comment created
 		objGmail.clickFirstEmail();
-		Assert.assertTrue(isTextPresent(message+newMessage));
-		Assert.assertTrue(isTextPresent(newDescription+description));
+		Assert.assertTrue(isTextPresent(newComment+comment));
     }
 }

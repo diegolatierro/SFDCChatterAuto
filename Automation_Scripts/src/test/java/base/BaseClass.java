@@ -2,6 +2,7 @@ package base;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -16,6 +17,7 @@ public class BaseClass {
 	protected WebDriver driver;
 	protected WebDriverWait wait;
 	protected Data objData;
+	protected JavascriptExecutor js;
 	
 	@BeforeClass
 	public void setup() {
@@ -23,11 +25,17 @@ public class BaseClass {
         objData = new Data(driver);
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         driver.get(objData.getChatterUrl());
+        if (driver instanceof JavascriptExecutor) {
+            js = (JavascriptExecutor)driver;
+        }
+        else {
+            throw new IllegalStateException("This driver does not support JavaScript!");
+        }
 	}
 	
     @AfterClass
 	public void exit () {
-		//driver.close();
+	//	driver.close();
 	}
     protected boolean isTextPresent(String text){
         try{
