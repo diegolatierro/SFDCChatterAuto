@@ -59,7 +59,6 @@ public class TestEditCommentOnPoll extends BaseClass{
 	    js.executeScript("arguments[0].click();", SalesforceChatter.postCommentEditButton);
 	    objChatterPage.editChatterCommentForPost(newComment);
 	    
-	    
 	    //verification that the post is no the email
 	    driver.get(gmailUrl);
 		objGmail.loginGmail(gmailEmail, gmailPass);

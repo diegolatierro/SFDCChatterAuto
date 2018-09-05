@@ -3,6 +3,20 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+      <class name="test.TestEditCommentOnQuestion">
+        <methods>
+          <include name="test_Create_Chatter_Post"/>
+          <include name="setup"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestEditCommentOnQuestion -->
+      <class name="test.TestDeleteCommentOnPoll">
+        <methods>
+          <include name="test_Create_Chatter_Post"/>
+          <include name="setup"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestDeleteCommentOnPoll -->
       <class name="test.TestDeleteCommentOnQuestion">
         <methods>
           <include name="test_Create_Chatter_Post"/>
@@ -10,6 +24,20 @@
           <include name="exit"/>
         </methods>
       </class> <!-- test.TestDeleteCommentOnQuestion -->
+      <class name="test.TestDeleteCommentOnPost">
+        <methods>
+          <include name="test_Create_Chatter_Post"/>
+          <include name="setup"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestDeleteCommentOnPost -->
+      <class name="test.TestEditCommentOnPoll">
+        <methods>
+          <include name="setup"/>
+          <include name="exit"/>
+          <include name="test_Create_Chatter_Post"/>
+        </methods>
+      </class> <!-- test.TestEditCommentOnPoll -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

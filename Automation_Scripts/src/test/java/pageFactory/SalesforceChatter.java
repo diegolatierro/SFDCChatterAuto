@@ -364,7 +364,7 @@ public class SalesforceChatter extends  BaseClass{
 		this.pause();
 		this.postPicklist.click();
 	}
-
+/*
 	public void clickOnCommentPicklist() {
 		this.pause();
 		this.postCommentPicklist.click();
@@ -374,7 +374,7 @@ public class SalesforceChatter extends  BaseClass{
 		this.pause();
 		this.postCommentEditButton.click();
 	}
-	
+	*/
 	public void deletePost() {
 		// click on picklist
 		this.clickOnPostOptions();
@@ -384,7 +384,6 @@ public class SalesforceChatter extends  BaseClass{
 		this.clickOnDeleteButton();
 		
 	}
-
 
 	public void editChatterCommentForPost(String newComment) {
 		// click on comment piclikst

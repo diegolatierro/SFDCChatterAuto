@@ -35,7 +35,7 @@ public class BaseClass {
 	
     @AfterClass
 	public void exit () {
-	//	driver.close();
+		driver.close();
 	}
     protected boolean isTextPresent(String text){
         try{
