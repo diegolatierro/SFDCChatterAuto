@@ -52,13 +52,6 @@
           <include name="exit"/>
         </methods>
       </class> <!-- test.TestDeletePoll -->
-      <class name="test.TestCreateCommentOnPost">
-        <methods>
-          <include name="test_Create_Chatter_Post"/>
-          <include name="setup"/>
-          <include name="exit"/>
-        </methods>
-      </class> <!-- test.TestCreateCommentOnPost -->
       <class name="test.TestDeleteQuestion">
         <methods>
           <include name="setup"/>
@@ -87,13 +80,6 @@
           <include name="exit"/>
         </methods>
       </class> <!-- test.TestDeleteCommentOnPoll -->
-      <class name="test.TestDeleteCommentOnPost">
-        <methods>
-          <include name="test_Create_Chatter_Post"/>
-          <include name="setup"/>
-          <include name="exit"/>
-        </methods>
-      </class> <!-- test.TestDeleteCommentOnPost -->
       <class name="test.TestCreateCommentOnPoll">
         <methods>
           <include name="test_Create_Chatter_Post"/>

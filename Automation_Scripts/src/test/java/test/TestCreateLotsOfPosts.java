@@ -44,7 +44,7 @@ public class TestCreateLotsOfPosts extends BaseClass{
 	    for (int i=1;i<=nrOfpost;i++) {
 	    	objChatterPage.createChatterPost(message+" post nr "+i);
 	    }
-	    /*
+	    
 	    //verify if text is present
 	    //Assert.assertTrue(objChatterPage.verifyTextPresent(message));
 	    
@@ -53,6 +53,6 @@ public class TestCreateLotsOfPosts extends BaseClass{
 		objGmail.loginGmail(gmailEmail, gmailPass);
 		//step 11 Click on connect button from the email
 		objGmail.clickFirstEmail();
-		Assert.assertTrue(isTextPresent(message));*/
+		Assert.assertTrue(isTextPresent(message));
     }
 }

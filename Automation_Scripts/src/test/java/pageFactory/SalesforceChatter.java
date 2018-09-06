@@ -122,6 +122,18 @@ public class SalesforceChatter extends  BaseClass{
 	public static
     WebElement pollCommentEditButton;
     
+    @FindBy(css="button[data-buttontype='attach']")
+    WebElement postAttachIcon;
+    
+    @FindBy(css="li.slds-p-horizontal--small:nth-child(1) > a:nth-child(1) > div:nth-child(1) > div:nth-child(1) > label:nth-child(1)")
+    WebElement postAttachFile;
+    
+    @FindBy(css="button[class='slds-button slds-button--neutral attach uiButton--default uiButton--brand uiButton']")
+    WebElement postAttachAddButton;
+    
+    @FindBy(css=".slds-pill__label")
+    WebElement attachmentLinkName;
+    
     public SalesforceChatter(WebDriver driver){
         this.driver = driver;
         //This initElements method will create all WebElements
@@ -134,9 +146,12 @@ public class SalesforceChatter extends  BaseClass{
     	driver.get("https://na72.lightning.force.com/lightning/page/chatter");
     }
     
+    
+    
     //click on post option
-    public void clickOnPost() {
-    	
+    public String getAttachmentName() {
+    	String attachmentName = attachmentLinkName.getText();
+    	return attachmentName;
     }
     
     //click on post hidden field to activate the textfield
@@ -162,6 +177,7 @@ public class SalesforceChatter extends  BaseClass{
     
     //click on Share button for post
     public void clickOnPostShareButton(){
+    	this.pause();
     	chatterShareButton.click();
     }
     
@@ -197,7 +213,27 @@ public class SalesforceChatter extends  BaseClass{
     	this.clickOnPostShareButton();
     }
     
-    public boolean verifyTextPresent(String value)
+    
+    
+    private void clickOnAddButton() {
+    	this.pause();
+		this.postAttachAddButton.click();
+	}
+
+
+	private void clickOnAttachmentToAdd() {
+    	this.pause();
+		this.postAttachFile.click();
+	}
+
+
+	private void clickOnAttachmentIcon() {
+    	this.pause();
+		this.postAttachIcon.click();
+	}
+
+
+	public boolean verifyTextPresent(String value)
     {
     	this.pause();
     	return driver.getPageSource().contains(value);
@@ -395,5 +431,47 @@ public class SalesforceChatter extends  BaseClass{
 		this.typeNewMessage(newComment);
 		// click on save
 		clickOnPostEditSave();
+	}
+
+	public void createChatterPostWithAttachment(String message) {
+    	//this.goToChatterURL();
+    	this.pause();
+    	this.clickOnPostField();
+    	this.typeOnPostField(message);
+    	//click on attachment field
+    	this.clickOnAttachmentIcon();
+    	//add the atachment
+    	this.clickOnAttachmentToAdd();
+    	//click on add
+    	this.clickOnAddButton();
+    	this.clickOnPostShareButton();
+    }
+	
+	public void createChatterQuestionWithAttachment(String message, String description) {
+		this.pause();
+		this.clickOnQuestion();
+    	this.typeQuestionField(message);
+    	this.typeQuestionDescription(description);
+    	//click on attachment field
+    	this.clickOnAttachmentIcon();
+    	//add the atachment
+    	this.clickOnAttachmentToAdd();
+    	//click on add
+    	this.clickOnAddButton();
+    	this.clickOnPostShareButton();
+	}
+	public void createChatterPollWithAttachment(String message, String choice1, String choice2) {
+		this.pause();
+    	this.clickOnPoll();
+    	this.typePollField(message);
+    	this.typePollChoice1(choice1);
+    	this.typePollChoice2(choice2);
+    	//click on attachment field
+    	this.clickOnAttachmentIcon();
+    	//add the atachment
+    	this.clickOnAttachmentToAdd();
+    	//click on add
+    	this.clickOnAddButton();
+    	this.clickOnPostShareButton();
 	}
 }

@@ -27,7 +27,7 @@ public class TestDeleteCommentOnQuestion extends BaseClass{
      */
 
     @Test
-    public void test_Create_Chatter_Post(){    	
+    public void test_Delete_Comment_Question(){    	
     	objGmail = new Gmail(driver);
 	    String message = objData.createARandomText("question");
 	    String description = objData.createARandomText("description");

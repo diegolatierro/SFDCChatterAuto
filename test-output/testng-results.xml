@@ -1,95 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="553111" started-at="2018-09-05T11:08:40Z" finished-at="2018-09-05T11:17:53Z">
+  <suite name="Default suite" duration-ms="103192" started-at="2018-09-06T15:25:29Z" finished-at="2018-09-06T15:27:12Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="553111" started-at="2018-09-05T11:08:40Z" finished-at="2018-09-05T11:17:53Z">
-      <class name="test.TestEditCommentOnQuestion">
-        <test-method status="PASS" signature="setup()[pri:0, instance:test.TestEditCommentOnQuestion@27efef64]" name="setup" is-config="true" duration-ms="9345" started-at="2018-09-05T11:08:40Z" finished-at="2018-09-05T11:08:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="test_Create_Chatter_Post()[pri:0, instance:test.TestEditCommentOnQuestion@27efef64]" name="test_Create_Chatter_Post" duration-ms="81364" started-at="2018-09-05T11:08:49Z" finished-at="2018-09-05T11:10:11Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_Create_Chatter_Post -->
-        <test-method status="PASS" signature="exit()[pri:0, instance:test.TestEditCommentOnQuestion@27efef64]" name="exit" is-config="true" duration-ms="928" started-at="2018-09-05T11:10:11Z" finished-at="2018-09-05T11:10:11Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- exit -->
-      </class> <!-- test.TestEditCommentOnQuestion -->
-      <class name="test.TestDeleteCommentOnQuestion">
-        <test-method status="PASS" signature="setup()[pri:0, instance:test.TestDeleteCommentOnQuestion@6f7fd0e6]" name="setup" is-config="true" duration-ms="8003" started-at="2018-09-05T11:10:11Z" finished-at="2018-09-05T11:10:19Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="test_Create_Chatter_Post()[pri:0, instance:test.TestDeleteCommentOnQuestion@6f7fd0e6]" name="test_Create_Chatter_Post" duration-ms="75990" started-at="2018-09-05T11:10:19Z" finished-at="2018-09-05T11:11:35Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_Create_Chatter_Post -->
-        <test-method status="PASS" signature="exit()[pri:0, instance:test.TestDeleteCommentOnQuestion@6f7fd0e6]" name="exit" is-config="true" duration-ms="1093" started-at="2018-09-05T11:11:35Z" finished-at="2018-09-05T11:11:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- exit -->
-      </class> <!-- test.TestDeleteCommentOnQuestion -->
-      <class name="test.TestDeleteCommentOnPoll">
-        <test-method status="PASS" signature="setup()[pri:0, instance:test.TestDeleteCommentOnPoll@47c62251]" name="setup" is-config="true" duration-ms="8047" started-at="2018-09-05T11:11:37Z" finished-at="2018-09-05T11:11:45Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="test_Create_Chatter_Post()[pri:0, instance:test.TestDeleteCommentOnPoll@47c62251]" name="test_Create_Chatter_Post" duration-ms="81618" started-at="2018-09-05T11:11:45Z" finished-at="2018-09-05T11:13:06Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_Create_Chatter_Post -->
-        <test-method status="PASS" signature="exit()[pri:0, instance:test.TestDeleteCommentOnPoll@47c62251]" name="exit" is-config="true" duration-ms="986" started-at="2018-09-05T11:13:06Z" finished-at="2018-09-05T11:13:07Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- exit -->
-      </class> <!-- test.TestDeleteCommentOnPoll -->
+    <test name="Default test" duration-ms="103192" started-at="2018-09-06T15:25:29Z" finished-at="2018-09-06T15:27:12Z">
       <class name="test.TestDeleteCommentOnPost">
-        <test-method status="PASS" signature="setup()[pri:0, instance:test.TestDeleteCommentOnPost@3e6fa38a]" name="setup" is-config="true" duration-ms="8288" started-at="2018-09-05T11:13:07Z" finished-at="2018-09-05T11:13:16Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:test.TestDeleteCommentOnPost@26653222]" name="setup" is-config="true" duration-ms="15876" started-at="2018-09-06T15:25:29Z" finished-at="2018-09-06T15:25:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="test_Create_Chatter_Post()[pri:0, instance:test.TestDeleteCommentOnPost@3e6fa38a]" name="test_Create_Chatter_Post" duration-ms="74838" started-at="2018-09-05T11:13:16Z" finished-at="2018-09-05T11:14:30Z">
+        <test-method status="PASS" signature="test_Delete_Comment_Poll()[pri:0, instance:test.TestDeleteCommentOnPost@26653222]" name="test_Delete_Comment_Poll" duration-ms="86141" started-at="2018-09-06T15:25:44Z" finished-at="2018-09-06T15:27:11Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_Create_Chatter_Post -->
-        <test-method status="PASS" signature="exit()[pri:0, instance:test.TestDeleteCommentOnPost@3e6fa38a]" name="exit" is-config="true" duration-ms="1025" started-at="2018-09-05T11:14:30Z" finished-at="2018-09-05T11:14:31Z">
+        </test-method> <!-- test_Delete_Comment_Poll -->
+        <test-method status="PASS" signature="exit()[pri:0, instance:test.TestDeleteCommentOnPost@26653222]" name="exit" is-config="true" duration-ms="1101" started-at="2018-09-06T15:27:11Z" finished-at="2018-09-06T15:27:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- exit -->
       </class> <!-- test.TestDeleteCommentOnPost -->
-      <class name="test.TestEditCommentOnPoll">
-        <test-method status="PASS" signature="setup()[pri:0, instance:test.TestEditCommentOnPoll@66a3ffec]" name="setup" is-config="true" duration-ms="7488" started-at="2018-09-05T11:14:31Z" finished-at="2018-09-05T11:14:39Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="test_Create_Chatter_Post()[pri:0, instance:test.TestEditCommentOnPoll@66a3ffec]" name="test_Create_Chatter_Post" duration-ms="98575" started-at="2018-09-05T11:14:39Z" finished-at="2018-09-05T11:16:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_Create_Chatter_Post -->
-        <test-method status="PASS" signature="exit()[pri:0, instance:test.TestEditCommentOnPoll@66a3ffec]" name="exit" is-config="true" duration-ms="990" started-at="2018-09-05T11:16:17Z" finished-at="2018-09-05T11:16:18Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- exit -->
-      </class> <!-- test.TestEditCommentOnPoll -->
-      <class name="test.TestEditCommentOnPost">
-        <test-method status="PASS" signature="setup()[pri:0, instance:test.TestEditCommentOnPost@77caeb3e]" name="setup" is-config="true" duration-ms="7595" started-at="2018-09-05T11:16:18Z" finished-at="2018-09-05T11:16:26Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="test_Create_Chatter_Post()[pri:0, instance:test.TestEditCommentOnPost@77caeb3e]" name="test_Create_Chatter_Post" duration-ms="86001" started-at="2018-09-05T11:16:26Z" finished-at="2018-09-05T11:17:52Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_Create_Chatter_Post -->
-        <test-method status="PASS" signature="exit()[pri:0, instance:test.TestEditCommentOnPost@77caeb3e]" name="exit" is-config="true" duration-ms="891" started-at="2018-09-05T11:17:52Z" finished-at="2018-09-05T11:17:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- exit -->
-      </class> <!-- test.TestEditCommentOnPost -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

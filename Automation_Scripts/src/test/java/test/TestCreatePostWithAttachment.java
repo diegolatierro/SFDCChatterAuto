@@ -1,6 +1,5 @@
 package test;
 
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -9,12 +8,10 @@ import pageFactory.Gmail;
 import pageFactory.SalesForceLogin;
 import pageFactory.SalesforceChatter;
 
-public class TestDeleteCommentOnPost extends BaseClass{
+public class TestCreatePostWithAttachment extends BaseClass{
 
-    //WebDriver driver;
     SalesForceLogin objLogin;
     SalesforceChatter objChatterPage;
-    //Data objData;
     Gmail objGmail;
 
     /**
@@ -26,17 +23,16 @@ public class TestDeleteCommentOnPost extends BaseClass{
      * verify that the post got to the email		
      */
 
-    @Test
-    public void test_Delete_Comment_Poll(){    	
+    @Test(priority=0)
+    public void test_Create_Chatter_Post(){    	
     	objGmail = new Gmail(driver);
 	    String message = objData.createARandomText("post");
-	    String comment = objData.createARandomText("comment");
 	    String salesforceUser = objData.getSalesforceUser();
 	    String salesforcePass = objData.getSalesforcePass();
 	    String gmailUrl = objData.getGmailURL();
     	String gmailEmail = objData.getGmailUserField();
     	String gmailPass = objData.getGmailPassField();
-	    
+	    String attachedFile;
 	    
 	    //Create Login Page object
 	    objLogin = new SalesForceLogin(driver);
@@ -44,25 +40,18 @@ public class TestDeleteCommentOnPost extends BaseClass{
 	    objLogin.loginToSalesforce(salesforceUser,salesforcePass);
 	    objChatterPage = new SalesforceChatter(driver);
 	    //create a chatter post
-	    objChatterPage.createChatterPost(message);
+	    objChatterPage.createChatterPostWithAttachment(message);
 	    //verify if text is present
+	    attachedFile = objChatterPage.getAttachmentName();
 	    Assert.assertTrue(objChatterPage.verifyTextPresent(message));
-	    //create a comment
-	    objChatterPage.createChatterCommentForPost(comment);
-	    //edit a comment
-	    objChatterPage.pause();
-	    js.executeScript("arguments[0].click();", SalesforceChatter.postCommentPicklist);
-	    objChatterPage.pause();
-	    js.executeScript("arguments[0].click();", SalesforceChatter.postCommentDeleteButton);
-	    //confirm delete
-	    objChatterPage.clickOnDeleteButton();
-	    
 	    
 	    //verification that the post is no the email
 	    driver.get(gmailUrl);
 		objGmail.loginGmail(gmailEmail, gmailPass);
-		//step 11 verify the comment created
+		//step 11 Click on connect button from the email
 		objGmail.clickFirstEmail();
-		Assert.assertTrue(isTextPresent(comment));
+		Assert.assertTrue(isTextPresent(message));
+		Assert.assertTrue(isTextPresent(attachedFile));
+		//assert file
     }
 }
