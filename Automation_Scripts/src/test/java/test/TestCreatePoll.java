@@ -23,7 +23,7 @@ public class TestCreatePoll extends BaseClass{
      */
 
     @Test(priority=0)
-    public void test_Create_Chatter_Post(){
+    public void test_Create_Chatter_Poll(){
     	objGmail = new Gmail(driver);
 	    String message = objData.createARandomText("poll");
 	    String choice1 = objData.createARandomText("choice 1");

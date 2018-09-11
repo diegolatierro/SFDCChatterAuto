@@ -27,7 +27,7 @@ public class TestDeleteCommentOnPost extends BaseClass{
      */
 
     @Test
-    public void test_Delete_Comment_Poll(){    	
+    public void test_Delete_Comment_Post(){    	
     	objGmail = new Gmail(driver);
 	    String message = objData.createARandomText("post");
 	    String comment = objData.createARandomText("comment");

@@ -24,7 +24,7 @@ public class TestCreateCommentOnQuestion extends BaseClass{
      */
 
     @Test(priority=0)
-    public void test_Create_Chatter_Post(){    	
+    public void test_Create_Comment_Question(){    	
     	objGmail = new Gmail(driver);
 	    String message = objData.createARandomText("question");
 	    String description = objData.createARandomText("description");

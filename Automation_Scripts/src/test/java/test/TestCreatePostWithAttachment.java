@@ -24,7 +24,7 @@ public class TestCreatePostWithAttachment extends BaseClass{
      */
 
     @Test(priority=0)
-    public void test_Create_Chatter_Post(){    	
+    public void test_Create_Chatter_Post_Attachment(){    	
     	objGmail = new Gmail(driver);
 	    String message = objData.createARandomText("post");
 	    String salesforceUser = objData.getSalesforceUser();

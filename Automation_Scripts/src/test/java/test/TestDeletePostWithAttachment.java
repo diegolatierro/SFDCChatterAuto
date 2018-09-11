@@ -8,7 +8,7 @@ import pageFactory.Gmail;
 import pageFactory.SalesForceLogin;
 import pageFactory.SalesforceChatter;
 
-public class TestCreateQuestionWithAttachment extends BaseClass{
+public class TestDeletePostWithAttachment extends BaseClass{
 
     SalesForceLogin objLogin;
     SalesforceChatter objChatterPage;
@@ -24,16 +24,15 @@ public class TestCreateQuestionWithAttachment extends BaseClass{
      */
 
     @Test(priority=0)
-    public void test_Create_Chatter_Question_Attachment(){    	
+    public void test_Delete_Chatter_Post_Attachment(){    	
     	objGmail = new Gmail(driver);
-	    String message = objData.createARandomText("question");
-	    String description = objData.createARandomText("description");
+	    String message = objData.createARandomText("post");
 	    String salesforceUser = objData.getSalesforceUser();
 	    String salesforcePass = objData.getSalesforcePass();
 	    String gmailUrl = objData.getGmailURL();
     	String gmailEmail = objData.getGmailUserField();
     	String gmailPass = objData.getGmailPassField();
-	    String attachedFile;
+	    //String attachedFile;
 	    
 	    //Create Login Page object
 	    objLogin = new SalesForceLogin(driver);
@@ -41,18 +40,18 @@ public class TestCreateQuestionWithAttachment extends BaseClass{
 	    objLogin.loginToSalesforce(salesforceUser,salesforcePass);
 	    objChatterPage = new SalesforceChatter(driver);
 	    //create a chatter post
-	    objChatterPage.createChatterQuestionWithAttachment(message, description);
+	    objChatterPage.createChatterPostWithAttachment(message);
 	    //verify if text is present
-	    attachedFile = objChatterPage.getAttachmentName();
+	    //attachedFile = objChatterPage.getAttachmentName();
 	    Assert.assertTrue(objChatterPage.verifyTextPresent(message));
-	    
+	    objChatterPage.deletePost();
 	    //verification that the post is no the email
 	    driver.get(gmailUrl);
 		objGmail.loginGmail(gmailEmail, gmailPass);
 		//step 11 Click on connect button from the email
 		objGmail.clickFirstEmail();
 		Assert.assertTrue(isTextPresent(message));
-		Assert.assertTrue(isTextPresent(attachedFile));
+		//Assert.assertTrue(isTextPresent(attachedFile));
 		//assert file
     }
 }

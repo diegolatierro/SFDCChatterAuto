@@ -24,7 +24,7 @@ public class TestCreateLotsOfPosts extends BaseClass{
      */
 
     @Test(priority=0)
-    public void test_Create_Chatter_Post(){    	
+    public void test_Create_Lots_Post(){    	
     	objGmail = new Gmail(driver);
     	int nrOfpost = 2;
 	    String message = objData.createARandomText("post");

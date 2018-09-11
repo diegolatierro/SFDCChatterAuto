@@ -25,7 +25,7 @@ public class TestEditPost extends BaseClass{
      */
 
     @Test(priority=0)
-    public void test_Create_Chatter_Post(){    	
+    public void test_Edit_Chatter_Post(){    	
     	objGmail = new Gmail(driver);
 	    String message = objData.createARandomText("post");
 	    String newMessage = objData.createARandomText("edit post");

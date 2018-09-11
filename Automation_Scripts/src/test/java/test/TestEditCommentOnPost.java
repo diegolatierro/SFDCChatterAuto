@@ -27,7 +27,7 @@ public class TestEditCommentOnPost extends BaseClass{
      */
 
     @Test
-    public void test_Create_Chatter_Post(){    	
+    public void test_Edit_Comment_Post(){    	
     	objGmail = new Gmail(driver);
 	    String message = objData.createARandomText("post");
 	    String comment = objData.createARandomText("comment");
