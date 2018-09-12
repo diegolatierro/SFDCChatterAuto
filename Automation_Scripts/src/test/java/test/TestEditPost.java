@@ -35,7 +35,6 @@ public class TestEditPost extends BaseClass{
     	String gmailEmail = objData.getGmailUserField();
     	String gmailPass = objData.getGmailPassField();
 	    
-	    
 	    //Create Login Page object
 	    objLogin = new SalesForceLogin(driver);
 	    //login to application

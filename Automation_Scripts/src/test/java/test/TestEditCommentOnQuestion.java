@@ -39,7 +39,6 @@ public class TestEditCommentOnQuestion extends BaseClass{
     	String gmailEmail = objData.getGmailUserField();
     	String gmailPass = objData.getGmailPassField();
 	    
-	    
 	    //Create Login Page object
 	    objLogin = new SalesForceLogin(driver);
 	    //login to application
@@ -58,7 +57,6 @@ public class TestEditCommentOnQuestion extends BaseClass{
 	    js.executeScript("arguments[0].click();", SalesforceChatter.postCommentEditButton);
 	    objChatterPage.editChatterCommentForPost(newComment);
 	    
-	     
 	    //verification that the post is no the email
 	    driver.get(gmailUrl);
 		objGmail.loginGmail(gmailEmail, gmailPass);

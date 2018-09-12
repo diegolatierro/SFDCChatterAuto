@@ -26,7 +26,7 @@ public class TestCreateLotsOfPosts extends BaseClass{
     @Test(priority=0)
     public void test_Create_Lots_Post(){    	
     	objGmail = new Gmail(driver);
-    	int nrOfpost = 2;
+    	int nrOfpost = 3;
 	    String message = objData.createARandomText("post");
 	    String salesforceUser = objData.getSalesforceUser();
 	    String salesforcePass = objData.getSalesforcePass();

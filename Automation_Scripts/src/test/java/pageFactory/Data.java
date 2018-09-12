@@ -11,12 +11,12 @@ public class Data {
 	WebDriver driver;
 
 	// URLS
-	String chatterDashboard = "https://na72.lightning.force.com/lightning/page/chatter";
+	String chatterDashboard = "https://na72.lightning.force.com/lightning/page/chatter";//56
 	String gmailUrl = "https://mail.google.com/mail/u/0/h/1isycmedm1c6q/?&";
 	
 	// Test Data fields
 
-	String salesforceUserField = "diegolatierro@pf.com";
+	String salesforceUserField = "diegolatierro@pf.com";//"diegolatierro@pf2.com"
 	String salesforcePassField = "latierro050985";
 	String gmailUserField = "diegopagefreezer@gmail.com";
 	String gmailPassField = "latierro050985";

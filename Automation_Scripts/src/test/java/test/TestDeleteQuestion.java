@@ -34,7 +34,6 @@ public class TestDeleteQuestion extends BaseClass{
     	String gmailEmail = objData.getGmailUserField();
     	String gmailPass = objData.getGmailPassField();
 	    
-	    
 	    //Create Login Page object
 	    objLogin = new SalesForceLogin(driver);
 	    //login to application
@@ -46,7 +45,6 @@ public class TestDeleteQuestion extends BaseClass{
 	    Assert.assertTrue(objChatterPage.verifyTextPresent(message));
 	    //delete post
 	    objChatterPage.deletePost();
-	    
 	    
 	    //verification that the post is no the email
 	    driver.get(gmailUrl);

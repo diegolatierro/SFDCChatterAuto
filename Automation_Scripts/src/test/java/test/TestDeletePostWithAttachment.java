@@ -50,8 +50,7 @@ public class TestDeletePostWithAttachment extends BaseClass{
 		objGmail.loginGmail(gmailEmail, gmailPass);
 		//step 11 Click on connect button from the email
 		objGmail.clickFirstEmail();
-		Assert.assertTrue(isTextPresent(message));
-		//Assert.assertTrue(isTextPresent(attachedFile));
 		//assert file
+		Assert.assertTrue(isTextPresent(message));
     }
 }

@@ -51,10 +51,6 @@ public class TestEditCommentOnPost extends BaseClass{
 	    //create a comment
 	    objChatterPage.createChatterCommentForPost(comment);
 	    //edit a comment
-	    
-	    //UNABLE TO CLICK EDIT ON COMMENT (EDIT AND DELETE COMMENTS WILL BE SUSPENDED)
-	    //objChatterPage.editChatterCommentForPost(newComment);
-	    
 	    js.executeScript("arguments[0].click();", SalesforceChatter.postCommentPicklist);
 	    objChatterPage.pause();
 	    js.executeScript("arguments[0].click();", SalesforceChatter.postCommentEditButton);

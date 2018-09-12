@@ -33,7 +33,6 @@ public class TestDeleteQuestionWithAttachment extends BaseClass{
 	    String gmailUrl = objData.getGmailURL();
     	String gmailEmail = objData.getGmailUserField();
     	String gmailPass = objData.getGmailPassField();
-	    //String attachedFile;
 	    
 	    //Create Login Page object
 	    objLogin = new SalesForceLogin(driver);
@@ -43,7 +42,6 @@ public class TestDeleteQuestionWithAttachment extends BaseClass{
 	    //create a chatter post
 	    objChatterPage.createChatterQuestionWithAttachment(message, description);
 	    //verify if text is present
-	    //attachedFile = objChatterPage.getAttachmentName();
 	    Assert.assertTrue(objChatterPage.verifyTextPresent(message));
 	    objChatterPage.deletePost();
 	    //verification that the post is no the email
@@ -51,8 +49,7 @@ public class TestDeleteQuestionWithAttachment extends BaseClass{
 		objGmail.loginGmail(gmailEmail, gmailPass);
 		//step 11 Click on connect button from the email
 		objGmail.clickFirstEmail();
-		Assert.assertTrue(isTextPresent(message));
-		//Assert.assertTrue(isTextPresent(attachedFile));
 		//assert file
+		Assert.assertTrue(isTextPresent(message));
     }
 }

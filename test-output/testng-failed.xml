@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="test.TestCreatePostWithAttachment">
+      <class name="test.TestEditPost">
         <methods>
           <include name="setup"/>
-          <include name="test_Create_Chatter_Post_Attachment"/>
+          <include name="test_Edit_Chatter_Post"/>
           <include name="exit"/>
         </methods>
-      </class> <!-- test.TestCreatePostWithAttachment -->
+      </class> <!-- test.TestEditPost -->
+      <class name="test.TestCreateQuestion">
+        <methods>
+          <include name="test_Create_Chatter_Question"/>
+          <include name="setup"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestCreateQuestion -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
