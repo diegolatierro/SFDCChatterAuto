@@ -3,20 +3,48 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="test.TestEditPost">
+      <class name="test.TestCreatePoll">
         <methods>
-          <include name="setup"/>
-          <include name="test_Edit_Chatter_Post"/>
-          <include name="exit"/>
-        </methods>
-      </class> <!-- test.TestEditPost -->
-      <class name="test.TestCreateQuestion">
-        <methods>
-          <include name="test_Create_Chatter_Question"/>
+          <include name="test_Create_Chatter_Poll"/>
           <include name="setup"/>
           <include name="exit"/>
         </methods>
-      </class> <!-- test.TestCreateQuestion -->
+      </class> <!-- test.TestCreatePoll -->
+      <class name="test.TestDeletePostWithAttachment">
+        <methods>
+          <include name="setup"/>
+          <include name="test_Delete_Chatter_Post_Attachment"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestDeletePostWithAttachment -->
+      <class name="test.TestEditCommentOnPoll">
+        <methods>
+          <include name="setup"/>
+          <include name="exit"/>
+          <include name="test_Edit_Comment_Poll"/>
+        </methods>
+      </class> <!-- test.TestEditCommentOnPoll -->
+      <class name="test.TestCreateCommentOnPoll">
+        <methods>
+          <include name="test_Create_Comment_Poll"/>
+          <include name="setup"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestCreateCommentOnPoll -->
+      <class name="test.TestDeletePoll">
+        <methods>
+          <include name="test_Delete_Chatter_Poll"/>
+          <include name="setup"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestDeletePoll -->
+      <class name="test.TestEditQuestion">
+        <methods>
+          <include name="test_Edit_Chatter_Question"/>
+          <include name="setup"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestEditQuestion -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -10,6 +10,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import pageFactory.Data;
+import pageFactory.Users;
 
 
 public class BaseClass {
@@ -17,12 +18,15 @@ public class BaseClass {
 	protected WebDriver driver;
 	protected WebDriverWait wait;
 	protected Data objData;
+	protected Users objUser;
 	protected JavascriptExecutor js;
+	
 	
 	@BeforeClass
 	public void setup() {
         driver = new FirefoxDriver();
         objData = new Data(driver);
+        objUser = new Users();
         driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         driver.get(objData.getChatterUrl());
         if (driver instanceof JavascriptExecutor) {
