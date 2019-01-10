@@ -42,7 +42,7 @@ public class TestDeletePost extends BaseClass{
 	    //create a chatter post
 	    objChatterPage.createChatterPost(message);
 	    //verify if text is present
-	    Assert.assertTrue(objChatterPage.verifyTextPresent(message));
+	    //Assert.assertTrue(objChatterPage.verifyTextPresent(message));
 	    //delete post
 	    objChatterPage.deletePost();
 	    
@@ -52,6 +52,7 @@ public class TestDeletePost extends BaseClass{
 		objGmail.loginGmail(gmailEmail, gmailPass);
 		//step 11 Click on connect button from the email
 		objGmail.clickFirstEmail();
+		System.out.println(message);
 		Assert.assertTrue(isTextPresent(message));
     }
 }

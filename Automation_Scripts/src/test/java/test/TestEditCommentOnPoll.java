@@ -64,6 +64,8 @@ public class TestEditCommentOnPoll extends BaseClass{
 		objGmail.loginGmail(gmailEmail, gmailPass);
 		//step 11 verify the comment created
 		objGmail.clickFirstEmail();
+		//System.out.println(comment);
+		//System.out.println(newComment);
 		Assert.assertTrue(isTextPresent(newComment+comment));
     }
 }

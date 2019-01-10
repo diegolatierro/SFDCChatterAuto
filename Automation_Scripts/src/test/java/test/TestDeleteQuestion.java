@@ -42,9 +42,9 @@ public class TestDeleteQuestion extends BaseClass{
 	    //create a chatter post
 	    objChatterPage.createChatterQuestion(message, description);
 	    //verify if text is present
-	    Assert.assertTrue(objChatterPage.verifyTextPresent(message));
+	    //Assert.assertTrue(objChatterPage.verifyTextPresent(message));
 	    //delete post
-	    objChatterPage.deletePost();
+	    objChatterPage.deleteQuestion();
 	    
 	    //verification that the post is no the email
 	    driver.get(gmailUrl);

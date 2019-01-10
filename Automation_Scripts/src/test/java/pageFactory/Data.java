@@ -12,17 +12,15 @@ public class Data extends BaseClass{
 
 	WebDriver driver;
 	Users objUser = new Users();
-	
-	// URLS
-	String chatterDashboard = objUser.getOrg1();
-	String gmailUrl = objUser.getGmailURL1();
-	
+		
 	// Test Data fields
-	String salesforceUserField = objUser.getOrg1User1();
-	String salesforcePassField = objUser.getOrg1Pass1();
-	String gmailUserField = objUser.getGmailUser1();
-	String gmailPassField = objUser.getGmailPass1();
-
+	String chatterDashboard 	= 	objUser.getOrg1();
+	String groupUrl				=	objUser.getOrg1Group();
+	String salesforceUserField	= 	objUser.getOrg1User1();
+	String salesforcePassField 	= 	objUser.getOrg1Pass1();
+	String gmailUserField 		= 	objUser.getGmailUser1();
+	String gmailPassField 		= 	objUser.getGmailPass1();
+	String gmailUrl 			= 	objUser.getGmailURL1();
 	// Packages
 	String version1_10 = "https://login.salesforce.com/packaging/installPackage.apexp?p0=04tf4000003VV9w";
 	String version1_11 = "https://login.salesforce.com/packaging/installPackage.apexp?p0=04tf4000003VVH8";
@@ -48,6 +46,9 @@ public class Data extends BaseClass{
 	public String getChatterUrl() {
 		return this.chatterDashboard;
 	}	
+	public String getChatterGroupUrl() {
+		return this.groupUrl;
+	}
 	public String getSalesforceUser() {
 		return this.salesforceUserField;
 	}

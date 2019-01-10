@@ -10,6 +10,20 @@
           <include name="exit"/>
         </methods>
       </class> <!-- test.TestCreatePoll -->
+      <class name="test.TestEditCommentOnQuestion">
+        <methods>
+          <include name="test_Edit_Comment_Question"/>
+          <include name="setup"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestEditCommentOnQuestion -->
+      <class name="test.TestCreateCommentOnQuestion">
+        <methods>
+          <include name="test_Create_Comment_Question"/>
+          <include name="setup"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestCreateCommentOnQuestion -->
       <class name="test.TestDeletePostWithAttachment">
         <methods>
           <include name="setup"/>
@@ -17,20 +31,34 @@
           <include name="exit"/>
         </methods>
       </class> <!-- test.TestDeletePostWithAttachment -->
-      <class name="test.TestEditCommentOnPoll">
+      <class name="test.TestDeleteCommentOnQuestion">
         <methods>
-          <include name="setup"/>
-          <include name="exit"/>
-          <include name="test_Edit_Comment_Poll"/>
-        </methods>
-      </class> <!-- test.TestEditCommentOnPoll -->
-      <class name="test.TestCreateCommentOnPoll">
-        <methods>
-          <include name="test_Create_Comment_Poll"/>
+          <include name="test_Delete_Comment_Question"/>
           <include name="setup"/>
           <include name="exit"/>
         </methods>
-      </class> <!-- test.TestCreateCommentOnPoll -->
+      </class> <!-- test.TestDeleteCommentOnQuestion -->
+      <class name="test.TestEditPost">
+        <methods>
+          <include name="setup"/>
+          <include name="test_Edit_Chatter_Post"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestEditPost -->
+      <class name="test.TestCreateQuestion">
+        <methods>
+          <include name="test_Create_Chatter_Question"/>
+          <include name="setup"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestCreateQuestion -->
+      <class name="test.TestCreateGroup">
+        <methods>
+          <include name="setup"/>
+          <include name="exit"/>
+          <include name="test_Create_Group"/>
+        </methods>
+      </class> <!-- test.TestCreateGroup -->
       <class name="test.TestDeletePoll">
         <methods>
           <include name="test_Delete_Chatter_Poll"/>
@@ -38,6 +66,90 @@
           <include name="exit"/>
         </methods>
       </class> <!-- test.TestDeletePoll -->
+      <class name="test.TestCreateCommentOnPost">
+        <methods>
+          <include name="test_Create_Comment_Post"/>
+          <include name="setup"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestCreateCommentOnPost -->
+      <class name="test.TestDeleteQuestion">
+        <methods>
+          <include name="test_Delete_Chatter_Question"/>
+          <include name="setup"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestDeleteQuestion -->
+      <class name="test.TestDeleteQuestionWithAttachment">
+        <methods>
+          <include name="test_Delete_Chatter_Question_Attachment"/>
+          <include name="setup"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestDeleteQuestionWithAttachment -->
+      <class name="test.TestCreatePostWithAttachment">
+        <methods>
+          <include name="setup"/>
+          <include name="test_Create_Chatter_Post_Attachment"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestCreatePostWithAttachment -->
+      <class name="test.TestEditCommentOnPoll">
+        <methods>
+          <include name="setup"/>
+          <include name="exit"/>
+          <include name="test_Edit_Comment_Poll"/>
+        </methods>
+      </class> <!-- test.TestEditCommentOnPoll -->
+      <class name="test.TestEditCommentOnPost">
+        <methods>
+          <include name="test_Edit_Comment_Post"/>
+          <include name="setup"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestEditCommentOnPost -->
+      <class name="test.TestDeleteCommentOnPoll">
+        <methods>
+          <include name="test_Delete_Comment_Poll"/>
+          <include name="setup"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestDeleteCommentOnPoll -->
+      <class name="test.TestDeleteCommentOnPost">
+        <methods>
+          <include name="test_Delete_Comment_Post"/>
+          <include name="setup"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestDeleteCommentOnPost -->
+      <class name="test.TestCreateCommentOnPoll">
+        <methods>
+          <include name="test_Create_Comment_Poll"/>
+          <include name="setup"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestCreateCommentOnPoll -->
+      <class name="test.TestCreatePost">
+        <methods>
+          <include name="test_Create_Chatter_Post"/>
+          <include name="setup"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestCreatePost -->
+      <class name="test.TestCreateQuestionWithAttachment">
+        <methods>
+          <include name="test_Create_Chatter_Question_Attachment"/>
+          <include name="setup"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestCreateQuestionWithAttachment -->
+      <class name="test.TestDeletePost">
+        <methods>
+          <include name="test_Delete_Chatter_Post"/>
+          <include name="setup"/>
+          <include name="exit"/>
+        </methods>
+      </class> <!-- test.TestDeletePost -->
       <class name="test.TestEditQuestion">
         <methods>
           <include name="test_Edit_Chatter_Question"/>

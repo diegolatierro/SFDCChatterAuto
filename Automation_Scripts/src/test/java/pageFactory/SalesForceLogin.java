@@ -55,5 +55,14 @@ public class SalesForceLogin {
         this.setPassword(strPasword);
         //Click Login button
         this.clickLogin();
+        this.pause();
     }
+  //NOT WRITE BUT THE ONLY WORKAROUND THAT I FOUND
+  	public void pause() {
+  		try {
+  			Thread.sleep(6000);
+  		} catch (InterruptedException e) {
+  			e.printStackTrace();
+  		}
+  	}
 }

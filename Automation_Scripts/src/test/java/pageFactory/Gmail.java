@@ -115,6 +115,7 @@ public class Gmail {
      */
 
     public void loginGmail(String strUserName,String strPasword){
+    	this.pause();
         //Fill user name
         this.setUserName(strUserName);
         // click on next

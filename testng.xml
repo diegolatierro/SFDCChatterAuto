@@ -24,6 +24,7 @@
       <class name="test.TestCreatePostWithAttachment"/>
       <class name="test.TestDeleteQuestionWithAttachment"/>
       <class name="test.TestDeletePostWithAttachment"/>
+      <class name="test.TestCreateGroup"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

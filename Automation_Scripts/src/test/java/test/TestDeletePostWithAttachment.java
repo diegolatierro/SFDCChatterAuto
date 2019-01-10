@@ -46,6 +46,7 @@ public class TestDeletePostWithAttachment extends BaseClass{
 	    Assert.assertTrue(objChatterPage.verifyTextPresent(message));
 	    objChatterPage.deletePost();
 	    //verification that the post is no the email
+	    
 	    driver.get(gmailUrl);
 		objGmail.loginGmail(gmailEmail, gmailPass);
 		//step 11 Click on connect button from the email

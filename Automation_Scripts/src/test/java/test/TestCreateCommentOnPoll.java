@@ -40,6 +40,7 @@ public class TestCreateCommentOnPoll extends BaseClass{
 	    //Create Login Page object
 	    objLogin = new SalesForceLogin(driver);
 	    //login to application
+	    System.out.println(salesforceUser);
 	    objLogin.loginToSalesforce(salesforceUser,salesforcePass);
 	    objChatterPage = new SalesforceChatter(driver);
 	    //create a chatter post

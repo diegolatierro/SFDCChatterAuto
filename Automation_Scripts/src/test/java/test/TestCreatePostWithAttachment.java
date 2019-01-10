@@ -52,6 +52,6 @@ public class TestCreatePostWithAttachment extends BaseClass{
 		objGmail.clickFirstEmail();
 		Assert.assertTrue(isTextPresent(message));
 		Assert.assertTrue(isTextPresent(attachedFile));
-		//assert file
+		//assert file*/
     }
 }

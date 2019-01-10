@@ -15,7 +15,8 @@ public class SalesforceChatter extends  BaseClass{
      * All WebElements are identified by @FindBy annotation
      */
 
-    WebDriver driver;
+    //WebDriver driver;
+    protected Data objData;
     
  //   WebDriverWait wait = new WebDriverWait(driver, 10);
     
@@ -44,9 +45,9 @@ public class SalesforceChatter extends  BaseClass{
     @FindBy(css="textarea[placeholder='What would you like to ask?']")
     WebElement chatterPollfield;
     
-    @FindBy(css="button[class='slds-button slds-button--neutral cuf-publisherShareButton qe-pollPostDesktop MEDIUM uiButton--default uiButton--brand uiButton']")
+    @FindBy(css="button[class='slds-button slds-button_brand cuf-publisherShareButton qe-pollPostDesktop MEDIUM']")
     WebElement chatterPollShareButton;
-    
+   	
     //VERIFY IF CHOICES IS A SELECTOR OR TIMEOUT PROBLEM 
     @FindBy(css="input[class='inputField cuf-pollChoiceField input']:nth-of-type(1)")
     WebElement chatterPollChoice1field;
@@ -63,10 +64,10 @@ public class SalesforceChatter extends  BaseClass{
     @FindBy(css="button[title='Click, or press Ctrl+Enter']")
     WebElement chatterQuestionAskButton;
     
-    @FindBy(css="textarea[placeholder='Write a comment...']:nth-of-type(1)")
+    @FindBy(css="input[placeholder='Write a comment...']:nth-of-type(1)")
     WebElement chatterActivationCommentForPost;
     
-    @FindBy(css="textarea[placeholder='Write an answer...']:nth-of-type(1)")
+    @FindBy(css="input[placeholder='Write an answer...']:nth-of-type(1)")
     WebElement chatterActivationCommentForQuestion;
     
     @FindBy(css="div[data-placeholder='Write a comment...']")
@@ -75,10 +76,10 @@ public class SalesforceChatter extends  BaseClass{
     @FindBy(css="div[data-placeholder='Write an answer...']")
     WebElement chatterCommentFieldOnQuestion;
     
-    @FindBy(css="button[class='slds-button slds-button--neutral  cuf-commentSubmit uiButton--default uiButton--brand uiButton']")
+    @FindBy(css="button[class='slds-button slds-button_brand  cuf-commentSubmit']")
     WebElement chatterCreateCommentButton;
     
-    @FindBy(css="button.slds-button--neutral:nth-child(2)")
+    @FindBy(css="button[type='button']+button[title='Click, or press Ctrl+Enter']")
     WebElement postEditSave;
     
     @FindBy(css=".slds-has-focus > div:nth-child(1) > div:nth-of-type(1)")
@@ -90,17 +91,20 @@ public class SalesforceChatter extends  BaseClass{
     @FindBy(css="div[data-placeholder='Update your post...']")
     WebElement questionEditDescField;
     
-    @FindBy(css="li.cuf-actionItem:nth-child(2) > a:nth-child(1)")
+    @FindBy(css="li[title='Edit']>a")
     WebElement postEditOption;
     
     @FindBy(css="div[class=\"cuf-media-right forceChatterOverflowActionMenu uiMenu\"]>a:nth-child(1)")
     WebElement postPicklist;
     
-    @FindBy(css="a[title='Delete']")
+    @FindBy(css="li[title='Delete']")
     WebElement postDeleteOption;
         
     @FindBy(css="button[title='Delete']")
     WebElement postDeleteButton;
+    
+    @FindBy(css="li[title='Delete']>a>span")
+    WebElement questionDeleteButton;
     
     @FindBy(css="button[class='slds-button slds-button_icon-bare']:nth-child(1)")
 	public static
@@ -125,7 +129,7 @@ public class SalesforceChatter extends  BaseClass{
     @FindBy(css="button[data-buttontype='attach']")
     WebElement postAttachIcon;
     
-    @FindBy(css="li.slds-p-horizontal--small:nth-child(1) > a:nth-child(1) > div:nth-child(1) > div:nth-child(1) > label:nth-child(1)")
+    @FindBy(css="li.slds-var-p-horizontal_medium:nth-child(1) > a:nth-child(1) > div:nth-child(1) > div:nth-child(1) > label:nth-child(1) > span:nth-child(3)")
     WebElement postAttachFile;
     
     @FindBy(css="button[class='slds-button slds-button--neutral attach uiButton--default uiButton--brand uiButton']")
@@ -134,18 +138,30 @@ public class SalesforceChatter extends  BaseClass{
     @FindBy(css=".slds-pill__label")
     WebElement attachmentLinkName;
     
+    //GroupFields
+    @FindBy(css="div[title='New']")
+    WebElement newGroupButton;
+    @FindBy(css="label[class='label inputLabel uiLabel-left form-element__label uiLabel']+input[class=' input']")
+    WebElement nameGroupField;
+    @FindBy(css="a[class='select']")
+    WebElement accessTypeGroupPicklist;
+    @FindBy(css="a[title='Public']")
+    WebElement accessTypeOptionGroupPicklist;
+    @FindBy(css="div.wizard-step:nth-child(2) > div:nth-child(4) > button:nth-child(4)")
+    WebElement saveNextGroupButton;
+    @FindBy(css="div.wizard-step:nth-child(3) > div:nth-child(4) > button:nth-child(4)")
+    WebElement nextGroupButton;
+    @FindBy(css=".finish")
+    WebElement doneGroupButton;
+    
+    
+    
+    
     public SalesforceChatter(WebDriver driver){
         this.driver = driver;
         //This initElements method will create all WebElements
         PageFactory.initElements(driver, this);
     }
-  
-    
-    //go to chatter page
-    public void goToChatterURL() {
-    	driver.get("https://na72.lightning.force.com/lightning/page/chatter");
-    }
-    
     
     
     //click on post option
@@ -168,6 +184,10 @@ public class SalesforceChatter extends  BaseClass{
     public void clickOnDeleteButton() {
     	this.pause();
     	postDeleteButton.click();
+    }
+    public void clickOnQuestionDeleteButton() {
+    	this.pause();
+    	questionDeleteButton.click();
     }
     
     //type automated post on textfield for post
@@ -206,7 +226,6 @@ public class SalesforceChatter extends  BaseClass{
      * click on share button
      */
     public void createChatterPost(String message) {
-    	//this.goToChatterURL();
     	this.pause();
     	this.clickOnPostField();
     	this.typeOnPostField(message);
@@ -256,6 +275,7 @@ public class SalesforceChatter extends  BaseClass{
     	this.clickOnPollShareButton();
     }
 	private void clickOnPollShareButton() {
+		this.pause();
 		chatterPollShareButton.click();
 	}
 	private void typePollChoice2(String choice2) {
@@ -313,6 +333,7 @@ public class SalesforceChatter extends  BaseClass{
     	this.clickOnCommentFieldForPoll();
     	this.typeOnCommentFieldForPoll(comment);
     	this.clickOnPostCommentButtonForPoll();
+    	this.pause();
 	}
 	
 	private void clickOnPostCommentButtonForPost() {
@@ -379,6 +400,7 @@ public class SalesforceChatter extends  BaseClass{
 
 	private void typeNewMessage(String newMessage) {
 		this.pause();
+		this.pause();
 		this.postEditField.sendKeys(newMessage);
 	}
 	private void typeNewMessageQuestion(String newMessage) {
@@ -400,25 +422,45 @@ public class SalesforceChatter extends  BaseClass{
 		this.pause();
 		this.postPicklist.click();
 	}
-/*
-	public void clickOnCommentPicklist() {
-		this.pause();
-		this.postCommentPicklist.click();
-	}
-	
-	public void clickOnEditCommentOption() {
-		this.pause();
-		this.postCommentEditButton.click();
-	}
-	*/
+
+	//group functions
+	public void clickOnNewGroupButton() {
+    	newGroupButton.click();
+    	this.pause();
+    }
+    public void typeOnNewGroupField(String groupName) {
+    	nameGroupField.sendKeys(groupName);
+    }
+    public void selectOnNewGroupAccessType() {
+    	accessTypeGroupPicklist.click();
+    	accessTypeOptionGroupPicklist.click();
+    }
+    public void clickOnSaveNextGroup() {
+    	saveNextGroupButton.click();
+    }
+    public void clickOnNextGroup() {
+    	nextGroupButton.click();
+    }
+    public void clickOnDoneGroup() {
+    	doneGroupButton.click();
+    }
 	public void deletePost() {
 		// click on picklist
 		this.clickOnPostOptions();
 		//click on delete option
 		this.clickOnDeleteOption();
 		//confirm the detele
-		this.clickOnDeleteButton();
-		
+		this.clickOnDeleteButton();	
+		this.pause();
+	}
+	public void deleteQuestion() {
+		// click on picklist
+		this.clickOnPostOptions();
+		//click on delete option
+		this.clickOnDeleteOption();
+		//confirm the detele
+		//this.clickOnQuestionDeleteButton();
+		this.clickOnDeleteButton();	
 	}
 
 	public void editChatterCommentForPost(String newComment) {
@@ -473,5 +515,24 @@ public class SalesforceChatter extends  BaseClass{
     	//click on add
     	this.clickOnAddButton();
     	this.clickOnPostShareButton();
+	}
+	
+	public void createGroup(String groupName) {
+		this.pause();
+		//click on new
+		this.clickOnNewGroupButton();
+		this.pause();
+		//type group name
+		this.typeOnNewGroupField(groupName);
+		//select access type
+		this.selectOnNewGroupAccessType();
+		//click on save and next
+		this.clickOnSaveNextGroup();
+		//click on next
+		this.pause();
+		this.clickOnNextGroup();
+		//click on done
+		this.pause();
+		this.clickOnDoneGroup();
 	}
 }
